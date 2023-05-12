@@ -34,7 +34,7 @@ function About() {
                 <h2>Skills</h2>
                 <h3>Web Design & Development</h3>
                
-                <p> HTML / CSS / JAVASCRIPT / JQUERY / REACT / BOOTSTRAP / FRAMER MOTION / MONGODB / EXPRESS / MYSQL / SQL / GraphQL / GIT / HEROKU / GODADDY </p>
+                <p> HTML / CSS / JAVASCRIPT / JQUERY / NODE / NPM / EXPRESS / REACT / BOOTSTRAP / FRAMER MOTION / MONGODB / EXPRESS / MYSQL / SQL / GraphQL / GIT / HEROKU / GODADDY </p>
                 <div className='line-div'></div>
                 <h3>Social Media & Marketing</h3>
                 <p> SEO / SOCIAL MEDIA MANAGEMENT & DEVELOPMENT / CONTENT CREATION / COPYWRITING / BRANDING / INFOGRAPHICS </p>

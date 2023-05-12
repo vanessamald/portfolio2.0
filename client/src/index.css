@@ -35,6 +35,19 @@ code {
   50% { bottom: 0em; }
   100% { bottom: 0; opacity: 1; }
 }
+
+@keyframes textAnimation {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
 /* Animations Ends */
 
 /* Marquee Styling */
@@ -54,6 +67,36 @@ code {
   font-family: BlackDelights;
   font-weight: 100;
   font-size: 5vw;
+}
+
+.marquee-p-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+}
+
+.marquee-p {
+  padding: 2rem;
+  z-index: 999;
+}
+
+.hidden-div {
+  font-size: 24px;
+  font-weight: 600;
+  width: 100vw;
+  padding: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: absolute;
+  /*-webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content:space-between;*/
+  align-items: center;
+  z-index: 9999;
+  overflow-x: hidden;
 }
 /* Marquee Ends */
 
@@ -83,6 +126,21 @@ code {
 
 
 /* Home Styling */
+
+.text-animation {
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  animation: textAnimation 2s forwards;
+  animation-delay: 1s;
+}
+
+.text {
+  color: #5B4A3B;
+  font-family: BlackDelights;
+  font-size: 4vw;
+}
+
 .home-header-container {
   display: flex;
   flex-direction: row;
@@ -95,14 +153,9 @@ code {
   margin-left: 6rem;
 }
 
-.home-intro {
-  font-family: BlackDelights;
-  font-size: 4vw;
-}
-
 .home-intro-container {
   padding: 100px;
-  margin-top: 100px;
+  margin-top: 15rem;
 }
 
 .profile-pic {
@@ -111,6 +164,7 @@ code {
   width: 400px;
   height: 400px;
   border-radius: 50%;
+  margin-right: 6rem;
   margin-left: auto;
   margin-top: 0px;
   margin-bottom: 50px;
@@ -222,12 +276,11 @@ a span span {
   position: fixed;
   left: 0;
   top: 0;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   border: 1px solid #5B4A3B;
-  background-color: transparent;
-  mix-blend-mode: difference;
+  background-color: #5B4A3B;
   z-index: 99999999999;
   pointer-events: none;
 }
@@ -236,12 +289,11 @@ a span span {
   position: fixed;
   left: 0;
   top: 0;
-  width: 60px;
-  height: 60px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 1px solid #5B4A3B;
   background-color: transparent;
-  mix-blend-mode: difference;
   z-index: 99999999999;
   pointer-events: none;
 }
@@ -270,6 +322,10 @@ a span span {
 
 .contact-container {
   padding: 5rem;
+}
+
+.form-content {
+  width: 100px;
 }
 
 .form-input {
