@@ -46,6 +46,7 @@ function Navigation () {
         <div className='menu-container'>
             <a className='menu-link' href='#about'><SplitText className={about}/></a>
             <a className='menu-link' href='#work'><SplitText2 className={about}/></a>
+            <a className='menu-link' href='#contact'><SplitText3 className={about}/></a>
         </div>
     )
 }

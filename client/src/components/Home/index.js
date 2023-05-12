@@ -4,6 +4,7 @@ import useCursor from '../cursor';
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import Navigation from '../Navigation';
 import Work from '../Work';
+import Contact from '../Contact';
 
 function Home() {
 
@@ -23,6 +24,7 @@ function Home() {
             </div>
             <About/>
             <Work/>
+            <Contact/>
         </div>
     )
 }

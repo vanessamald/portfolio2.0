@@ -37,7 +37,12 @@ code {
 }
 
 
-
+/* Loading Page Styling */
+.loading-page {
+  padding: 5rem;
+  font-size: 3vw;
+}
+/* Loading Page Ends */
 
 /*
 .cursor {
@@ -65,7 +70,7 @@ code {
 
 .home-title {
   font-size: 3vw;
-  margin-top: 6rem;
+  margin-top: 2rem;
   margin-left: 6rem;
 }
 
@@ -76,6 +81,7 @@ code {
 
 .home-intro-container {
   padding: 100px;
+  margin-top: 100px;
 }
 
 .profile-pic {
@@ -105,11 +111,12 @@ a span span {
 .menu-container {
   display: flex;
   flex-direction: column;
-  margin-top: 6rem;
+  margin-top: 2rem;
 }
 
 .menu-link {
   font-size: 2vw;
+  text-align: right;
   color:#5B4A3B;
   text-decoration: none;
   margin-right: 6rem;
@@ -138,15 +145,41 @@ a span span {
   border: 1px solid #5B4A3B;
 }
 
-.education-container {
+.education-container, .skills-container, .work-container, .about-me-container {
   padding: 5rem;
 }
 
-.skills-container {
-  padding: 5rem;
+.about-me-text {
+  font-size: 6vw;
+}
+
+.about-em {
+  font-family: BlackDelights;
+}
+
+.about-me-container {
+  
+}
+
+.scrolled {
+  background-color: #444444;
+  color: #FFFAF7;
+  transition: 2s;
 }
 /* About Styling Ends */
 
+/* Work Styling Start */
+.work-image {
+  width: 400px;
+  height: auto;
+}
+
+.work-image-container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Work Styling Start */
 
 /* Cursor Styling */
 .custom-cursor {
@@ -215,5 +248,12 @@ a span span {
 @media only screen and (max-width: 600px) {
   * {
     cursor: pointer;
+  }
+  .work-image-container {
+    flex-direction: column-reverse;
+  }
+  .work-image {
+    width: 300px;
+    height: auto;
   }
 }
