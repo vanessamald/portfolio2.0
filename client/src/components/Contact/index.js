@@ -2,23 +2,23 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
 const Contact = () => {
-        // contact form status
-        const [ status, setStatus ] = useState('Submit');
+    // contact form status
+    const [ status, setStatus ] = useState('Submit');
 
-        // set state for contact form 
-        const [name, setName] = useState('');
-        const [email, setEmail] = useState('');
-        const [message, setMessage] = useState('');
-        const [subject, setSubject] = useState('');
+    // set state for contact form 
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [subject, setSubject] = useState('');
     
-        // set state for response 
-        const [result, setResult] = useState(null);
+    // set state for response 
+    const [result, setResult] = useState(null);
     
-        // handle sumbit form 
-        const submitForm = async (e) => {
-            e.preventDefault();
-            //setStatus('Sending email');
-            e.target.reset();
+    // handle sumbit form 
+    const submitForm = async (e) => {
+        e.preventDefault();
+        //setStatus('Sending email');
+        e.target.reset();
         
         let emailMessage = {
             name: name,
@@ -51,9 +51,10 @@ const Contact = () => {
                 })
               }}
             }; 
-            
+
     return (
-        <div>
+        <div className='contact-container'>
+            <h3 className='contact-title'>Let's Connect!</h3>
                 <Form onSubmit={submitForm} className='form-content'>
                 <Form.Group className="form-group" controlId="name">
                     <Form.Label className='form-name'></Form.Label>
@@ -63,6 +64,7 @@ const Contact = () => {
                         placeholder="Name"
                         required
                     />
+                    <div className='contact-line'></div>
                 </Form.Group>
                 <Form.Group className="form-group" controlId="email">
                     <Form.Label className='form-name'></Form.Label>
@@ -72,6 +74,7 @@ const Contact = () => {
                         placeholder="email@example.com"
                         required
                     />
+                    <div className='contact-line'></div>
                 </Form.Group>
                 <Form.Group className='form-group'>
                     <Form.Label className='form-name'></Form.Label>
@@ -81,18 +84,20 @@ const Contact = () => {
                         placeholder="Subject"
                         required
                     />
+                    <div className='contact-line'></div>
                 </Form.Group>
                 <Form.Group className='form-group'
                     controlId="message"
                     >
                     <Form.Label className='form-name'></Form.Label>
-                    <Form.Control className='form-input'
+                    <Form.Control className='form-input-message'
                         onChange={(e) => setMessage(e.target.value)}  
                         as="textarea" 
                         placeholder="Message"
                         rows={3} 
                         required
                     />
+                    <div className='contact-line'></div>
                 </Form.Group>
                 <div style={{}}>
                 <button 
@@ -102,8 +107,7 @@ const Contact = () => {
                 >
                 {status}
                 </button>
-                </div>
-               
+                </div> 
             </Form>
         </div>
     )

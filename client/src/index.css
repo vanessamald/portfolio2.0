@@ -13,7 +13,7 @@ code {
 }
 
 * {
-  background-color: #FFFAF7;
+  background-color: #EDECE7;
   color: #5B4A3B;
 }
 
@@ -35,6 +35,27 @@ code {
   50% { bottom: 0em; }
   100% { bottom: 0; opacity: 1; }
 }
+/* Animations Ends */
+
+/* Marquee Styling */
+.marquee-flex {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+}
+
+.marquee {
+  margin-top: -50px;
+  background-color: transparent;
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: BlackDelights;
+  font-weight: 100;
+  font-size: 5vw;
+}
+/* Marquee Ends */
 
 
 /* Loading Page Styling */
@@ -142,7 +163,7 @@ a span span {
 
 /* About Styling */
 .line-div {
-  border: 1px solid #5B4A3B;
+  border: 0.5px solid #5B4A3B;
 }
 
 .education-container, .skills-container, .work-container, .about-me-container {
@@ -241,10 +262,39 @@ a span span {
   text-align: center;
 }
 
-.cursor-hover {
-
+/* Contact Styling */
+.contact-title {
+  font-family: BlackDelights;
+  font-size: 5vw;
 }
 
+.contact-container {
+  padding: 5rem;
+}
+
+.form-input {
+  border: none;
+}
+
+.form-input-message {
+  border:none;
+  height: 100px;
+}
+
+.form-button {
+  border: 1px solid black;
+  border-radius: 50px;
+  margin-top: 1rem;
+  width: 10rem;
+  height: 2rem;
+}
+
+.contact-line {
+  border-bottom: 0.5px solid black;
+  width: 10rem;
+}
+
+/* Mobile Styling */ 
 @media only screen and (max-width: 600px) {
   * {
     cursor: pointer;
