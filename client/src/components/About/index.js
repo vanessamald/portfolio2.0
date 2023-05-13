@@ -38,7 +38,7 @@ function About() {
               <p>Although I love being creative and experimenting with how the UI looks, I also enjoy owning a project from beginning to end. </p>
               <p>What do I do for fun?</p>
               <p>
-                  When I'm not coding (yes I love coding for fun!) you can find me curled up with my dogs <em>reading</em> a book. Currently reading <em>The Daughter of the Moon Goddess</em>. 
+                  When I'm not coding (yes I love coding for fun!) you can find me curled up with my dogs <em>reading</em> a book. Currently reading <em><a href='https://www.goodreads.com/book/show/57789637-daughter-of-the-moon-goddess' target='_blank'>The Daughter of the Moon Goddess</a></em>. 
               </p>
             </div>
             <div className='skills-container'>

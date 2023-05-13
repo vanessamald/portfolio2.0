@@ -8,6 +8,7 @@ import revivirMobile from '../../assets/images/revivir-mobile.png';
 
 function Work() {
     const [ isHovering, setIsHovering ] = useState(false);
+    const [ isHovering2, setIsHovering2 ] = useState(false);
     
     const handleMouseOver = () => {
         setIsHovering(true);
@@ -15,6 +16,14 @@ function Work() {
 
     const handleMouseOut = () => {
         setIsHovering(false);
+    }
+
+    const handleMouseOver2 = () => {
+        setIsHovering2(true);
+    }
+
+    const handleMouseOut2 = () => {
+        setIsHovering2(false);
     }
 
     return (
@@ -30,14 +39,12 @@ function Work() {
                         <h4>Role</h4>
                         <p>Sole Designer/Developer</p>
                         <h4>Tech Stack</h4>
-                        <p>Node, Express, Nodemailer, React, Bootstrap, CSS</p>
+                        <p>Node, Express, Nodemailer, React, Bootstrap, Framer Motion, CSS, HTML, JavaScript</p>
                     </div>
                 )}
                 <img src={evokeMobile} className='work-image'></img>
             </div>
-            
             <div className='line-div'></div>
-
             <h3>Projects</h3>
             <p>Revivir Studio.</p>
             <p>A website currently under development for my freelance business.</p>
@@ -47,13 +54,21 @@ function Work() {
             </div>
             <br/>
            <div className='line-div'></div>
-            <p>Friends Timed Quiz</p>
+           <br/>
+            <a href='https://vanessamald.github.io/API-timed-quiz/' target='_blank' onMouseOver={handleMouseOver2} onMouseOut={handleMouseOut2}>Friends Timed Quiz</a>
             <p>A timed Friends trivia quiz that stores the highest score.</p>
             <div className='work-image-container'>
                 <img src={friendsDesktop1} className='work-image'></img>
+                {isHovering2 &&  (
+                    <div className='work-hidden-container'>
+                        <h4>Role</h4>
+                        <p>Sole Developer</p>
+                        <h4>Tech Stack</h4>
+                        <p>HTML, CSS, JavaScript, LocalStorage</p>
+                    </div>
+                )}
                 <img src={friendsMobile} className='work-image'></img>
             </div>
-            
         </div>
     )
 }
