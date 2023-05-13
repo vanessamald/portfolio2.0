@@ -2,18 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 function Cursor() {
-    // state for hovered a links
+   // const [ cursorVariant, setCursorVariant ] = useState("default");
+   // const [ cursorHover, setCursorHover ] = useState("default");
     const [linkHover, setLinkHover] = useState(false);
+    //const [hidden, setHidden] = useState(false);
+   
+   /* const mLeave = () => {
+      setHidden(true);
+    };
+
+    const mEnter = () => {
+      setHidden(false);
+    };
+    */
+
+   // const cursorRef = React.useRef(null);
     
     const cursorX = useMotionValue(-100);
     const cursorY = useMotionValue(-100);
 
-    // add spring to cursor
-    const springConfig = { damping: 100, stiffness: 700 };
-    const cursorXSpring = useSpring(cursorX, springConfig);
-    const cursorYSpring = useSpring(cursorY, springConfig);
-
-    // add event listeners for custom cursor
+  
     useEffect(() => {
       const moveCursor = (e) => {
         cursorX.set(e.clientX - 5);
@@ -25,11 +33,17 @@ function Cursor() {
     window.addEventListener("mouseenter", moveCursor);
     window.addEventListener("mouseleave", moveCursor);
 
+
+
     return () => {
       window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("mousedown", moveCursor);
       window.removeEventListener("mouseout", moveCursor);
+      //document.removeEventListener('mouseenter', () => setLinkHover);
+      //document.removeEventListener('mouseleave', () => setLinkHover);
+
     };
+    
     }, []);
   
     const variants = {
@@ -57,15 +71,41 @@ function Cursor() {
 
     const addLinkEvents = () => {
       document.querySelectorAll('a').forEach((el) => {
+        el.addEventListener('mouseenter', () => setLinkHover(true));
+        el.addEventListener('mouseleave', () => setLinkHover(false));
+      });
+      document.querySelectorAll('button').forEach((el) => {
         el.addEventListener('mouseover', () => setLinkHover(true));
         el.addEventListener('mouseout', () => setLinkHover(false));
       });
     }
+    
+
+    const removeLinkEvents = () => {
+      document.querySelectorAll('a').forEach((el) => {
+        el.removeEventListener('mouseenter', setLinkHover(true));
+        el.removeEventListener('mouseleave', setLinkHover(false));
+      });
+      document.querySelectorAll('button').forEach((el) => {
+        el.removeEventListener('mouseover', setLinkHover(true));
+        el.removeEventListener('mouseout', setLinkHover(false));
+      });
+    };
+
+    addLinkEvents();
+    
+    useEffect(() => {
       addLinkEvents();
+  
+      return () => {
+        //removeLinkEvents();
+      };
+    }, []);
+  
   
     return (
         <motion.div className={linkHover ? 'cursor-hover' : 'cursor'} variants={variants} style={{translateX: cursorX, translateY: cursorY}}
-        />  
+        ><div className='large-cursor'></div> </motion.div> 
     )
 }
 

@@ -53,7 +53,7 @@ const Contact = () => {
             }; 
 
     return (
-        <div className='contact-container'>
+        <div className='contact-container' id='contact'>
             <h3 className='contact-title'>Let's Connect!</h3>
                 <Form onSubmit={submitForm} className='form-content'>
                 <Form.Group className="form-group" controlId="name">

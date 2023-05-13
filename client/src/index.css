@@ -14,6 +14,7 @@ code {
 
 * {
   background-color: #EDECE7;
+  /*background-color: #EFE9E4;*/
   color: #5B4A3B;
 }
 
@@ -79,6 +80,9 @@ code {
 .marquee-p {
   padding: 2rem;
   z-index: 999;
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: 200;
 }
 
 .hidden-div {
@@ -220,7 +224,7 @@ a span span {
   border: 0.5px solid #5B4A3B;
 }
 
-.education-container, .skills-container, .work-container, .about-me-container {
+.education-container, .skills-container, .work-container, .about-me-container, .about-me-container2 {
   padding: 5rem;
 }
 
@@ -228,22 +232,33 @@ a span span {
   font-size: 6vw;
 }
 
+.about-me-text2 {
+  font-size: 4vw;
+}
+
 .about-em {
   font-family: BlackDelights;
 }
 
-.about-me-container {
-  
-}
 
 .scrolled {
   background-color: #444444;
   color: #FFFAF7;
   transition: 2s;
 }
+
+.skills-content {
+  font-weight: 400;
+}
+
 /* About Styling Ends */
 
 /* Work Styling Start */
+.work-hidden-container {
+  font-size: 1vw;
+  
+}
+
 .work-image {
   width: 400px;
   height: auto;
@@ -257,6 +272,18 @@ a span span {
 /* Work Styling Start */
 
 /* Cursor Styling */
+.large-cursor {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 0.5px solid #5B4A3B;
+  background-color: transparent;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate(-140px, -140px);
+}
+
 .custom-cursor {
   position: fixed;
   left: 0;
