@@ -11,6 +11,8 @@ dotenv.config();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+app.use(express.static(path.resolve(__dirname, '../client/build')));
+
 app.post('/contact', (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
