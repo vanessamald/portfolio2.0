@@ -83,12 +83,12 @@ function Cursor() {
 
     const removeLinkEvents = () => {
       document.querySelectorAll('a').forEach((el) => {
-        el.removeEventListener('mouseenter', setLinkHover(true));
-        el.removeEventListener('mouseleave', setLinkHover(false));
+        el.removeEventListener('mouseenter', setLinkHover(false));
+        el.removeEventListener('mouseleave', setLinkHover(true));
       });
       document.querySelectorAll('button').forEach((el) => {
-        el.removeEventListener('mouseover', setLinkHover(true));
-        el.removeEventListener('mouseout', setLinkHover(false));
+        el.removeEventListener('mouseover', setLinkHover(false));
+        el.removeEventListener('mouseout', setLinkHover(true));
       });
     };
 
@@ -98,7 +98,7 @@ function Cursor() {
       addLinkEvents();
   
       return () => {
-        //removeLinkEvents();
+        removeLinkEvents();
       };
     }, []);
   

@@ -48,6 +48,32 @@ code {
   }
 }
 
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.50;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes draw-line {
+  0% {
+    width: 0;
+  }
+  50% {
+   
+    border: 0.5px solid #5B4A3B;
+  }
+  100% {
+ 
+    border: 0.5px solid #5B4A3B;
+  }
+}
+
 
 /* Animations Ends */
 
@@ -59,7 +85,6 @@ code {
 }
 
 .marquee {
-  margin-top: -50px;
   background-color: transparent;
   position: relative;
   width: 100vw;
@@ -158,7 +183,7 @@ code {
 }
 
 .home-intro-container {
-  padding: 100px;
+  padding: 3rem;
   margin-top: 15rem;
 }
 
@@ -221,7 +246,7 @@ a span span {
 
 /* About Styling */
 .line-div {
-  border: 0.5px solid #5B4A3B;
+  animation: draw-line 2s forwards;
 }
 
 .education-container, .skills-container, .work-container, .about-me-container, .about-me-container2 {
@@ -230,6 +255,7 @@ a span span {
 
 .about-me-text {
   font-size: 6vw;
+  opacity: 0;
 }
 
 .about-me-text2 {
@@ -244,7 +270,16 @@ a span span {
 .scrolled {
   background-color: #444444;
   color: #FFFAF7;
-  transition: 2s;
+  transition: 4s;
+  opacity:1;
+}
+
+.scrolled-em {
+  background-color: #444444;
+  color: #FFFAF7;
+  transition: 1s;
+  opacity:1;
+  
 }
 
 .skills-content {
@@ -260,7 +295,7 @@ a span span {
 }
 
 .work-image {
-  width: 400px;
+  width: 30rem;
   height: auto;
 }
 
@@ -380,13 +415,71 @@ a span span {
 /* Mobile Styling */ 
 @media only screen and (max-width: 600px) {
   * {
-    cursor: pointer;
+    cursor: auto;
+  }
+  .cursor {
+    display: none;
+  }
+  .home-title {
+    margin-left: 3rem;
+    font-size: 4vw;
+  }
+  .menu-link {
+    margin-right: 3rem;
+    font-size: 4vw;
+  }
+  .profile-pic {
+    width: 300px;
+    height: 300px;
+  }
+  .home-intro-container {
+    padding: 4rem;
   }
   .work-image-container {
     flex-direction: column-reverse;
   }
   .work-image {
-    width: 300px;
+    width: 13rem;
     height: auto;
+  }
+  .education-container, .skills-container, .work-container, .about-me-container, .about-me-container2 {
+  padding: 3rem;
+  }
+  .contact-container {
+    padding: 3rem;
+  }
+}
+
+@media only screen and (device-width: 768px) {
+  /* For general iPad layouts */
+  * {
+    cursor: auto;
+  }
+  .cursor {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+  /* For portrait layouts only */
+  * {
+    cursor: auto;
+  }
+  .cursor {
+    display: none;
+  }
+  .work-image {
+    width: 20rem;
+    height: auto;
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+  /* For landscape layouts only */
+  * {
+    cursor: auto;
+  }
+  .cursor {
+    display: none;
   }
 }

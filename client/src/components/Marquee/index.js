@@ -29,7 +29,7 @@ const marqueeVariants = {
 const Marquee = () => {
     return (
     <div>
-        <div className="marquee">
+        <div className="marquee" style={{marginBottom: '-3rem'}}>
             <motion.div
                 className="marquee-flex"
                 variants={marqueeVariants}
@@ -47,7 +47,7 @@ const Marquee = () => {
         <div className="marquee-p-container">
             <a href='#skills' className="marquee-p">See A Breakdown of my Skills here</a>
         </div>
-        <div className="marquee">
+        <div className="marquee" style={{marginTop: '-3rem'}}>
           <motion.div
               className="marquee-flex"
               variants={marqueeVariants}
