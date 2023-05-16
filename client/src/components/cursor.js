@@ -28,7 +28,6 @@ function Cursor() {
         cursorY.set(e.clientY - 5);
 
     };
-    
     window.addEventListener("mousemove", moveCursor);
     window.addEventListener("mouseenter", moveCursor);
     window.addEventListener("mouseleave", moveCursor);

@@ -51,12 +51,14 @@ code {
 @keyframes textReveal {
   0% {
     opacity: 0;
+    transform: translateY(100px);
   }
   50% {
     opacity: 0.50;
   }
   100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -183,11 +185,12 @@ code {
 }
 
 .home-intro-container {
-  padding: 3rem;
+  padding: 6rem;
   margin-top: 15rem;
 }
 
 .profile-pic {
+  opacity: 0;
   border: 1px solid #5B4A3B;
   object-fit: cover;
   width: 400px;
@@ -199,6 +202,8 @@ code {
   margin-bottom: 50px;
   float: right; 
   transition: width 2s, height 2s, transform 2s;
+  animation: textReveal 2s forwards;
+  animation-delay: 1s;
 }
 
 /* Home Styling Ends */
@@ -274,16 +279,18 @@ a span span {
   opacity:1;
 }
 
-.scrolled-em {
+.scrolled2 {
   background-color: #444444;
   color: #FFFAF7;
-  transition: 1s;
-  opacity:1;
-  
+  transition: 4s;
 }
 
 .skills-content {
   font-weight: 400;
+}
+
+.skills-edu-container {
+
 }
 
 /* About Styling Ends */
@@ -433,7 +440,7 @@ a span span {
     height: 300px;
   }
   .home-intro-container {
-    padding: 4rem;
+    padding: 3rem;
   }
   .work-image-container {
     flex-direction: column-reverse;

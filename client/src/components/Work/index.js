@@ -30,7 +30,7 @@ function Work() {
         <div className='work-container' id='work'>
             <h2>Work</h2>
             <h3>Freelance</h3>
-            <a href='https://www.evokediagnostics.com' target='_blank' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>Evoke Neurodiagnostics.</a>
+            <a href='https://www.evokediagnostics.com' target='_blank' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>Evoke Neurodiagnostics</a>
             <p></p>
             <div className='work-image-container'>
                 <img alt='Evoke Neurodiagnostics desktop view' src={evokeDesktop1} className='work-image'></img>

@@ -14,7 +14,7 @@ function Home() {
                 <Navigation/>
             </div>
             <div className="">
-                <img src={require("../../assets/images/profile-pic.jpg")} alt="profile pic" className="profile-pic"/>
+                <img src={require("../../assets/images/profile-pic.jpg")} alt="profile picture" className="profile-pic"/>
                 <div className='home-intro-container'>
                     
                     

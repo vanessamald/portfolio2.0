@@ -41,8 +41,10 @@ function About() {
                   When I'm not coding (yes I love coding for fun!) you can find me curled up with my dogs <em>reading</em> a book. Currently reading <em><a href='https://www.goodreads.com/book/show/57789637-daughter-of-the-moon-goddess' target='_blank'>The Daughter of the Moon Goddess</a></em>. 
               </p>
             </div>
+
+            <div className={`skills-edu-container ${isScrolled ? 'scrolled2' : ''}`}>
             <div className='skills-container'>
-                <h2 id='skills'>Skills</h2>
+              <h2 id='skills'>Skills</h2>
                 <h3>Web Design & Development</h3>
                 <h4>Languages + Frameworks</h4>
                 <div className='skills-content'>
@@ -82,9 +84,8 @@ function About() {
                 <div className='line-div'></div>
                 <p>University of Texas Bachelor's Degree in Public Health - 2020</p>
             </div>
-            
+          </div> 
         </div>
-    
     )
 }
 
