@@ -3,6 +3,7 @@ import About from '../About/index';
 import Navigation from '../Navigation';
 import Work from '../Work';
 import Contact from '../Contact';
+import Footer from '../Footer';
 
 function Home() {
     const aboutSentence = 'Hi! I am Vanessa Maldonado, a Mexican-American Freelance Web Developer.'
@@ -32,6 +33,7 @@ function Home() {
             <About/>
             <Work/>
             <Contact/>
+            <Footer/>
         </div>
     )
 }

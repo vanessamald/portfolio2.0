@@ -2,20 +2,24 @@ import React, { useState, useEffect } from 'react';
 
 const Loading = () => {
     const [typedText, setTypedText] = useState('');
-    const text = '...';
+    const text = 'Loading';
   
     useEffect(() => {
       let currentIndex = 0;
   
       const timerId = setInterval(() => {
-        setTypedText((prevText) => prevText + text[currentIndex]);
+        //setTypedText((prevText) => prevText + text[currentIndex]);
+        
+        console.log(text[currentIndex]);
+        setTypedText(text[currentIndex]);
 
         currentIndex++;
-  
-        if (currentIndex === text.length) {
+        console.log(typedText);
+        
+        if (currentIndex === text.length ) {
           clearInterval(timerId);
         }
-      }, 100); // Typing speed in milliseconds
+      }, 150); // Typing speed in milliseconds
   
       return () => {
         clearInterval(timerId);
@@ -25,8 +29,7 @@ const Loading = () => {
 
   return (
     <div className="loading-page">
-      <h1>Loading...</h1>
-      <div className='line-div'></div>
+     <h1 className='loading-text'>{typedText}</h1>
     </div>
   );
 };
