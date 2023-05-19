@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
+
 function Cursor() {
+ 
    // const [ cursorVariant, setCursorVariant ] = useState("default");
    // const [ cursorHover, setCursorHover ] = useState("default");
     const [linkHover, setLinkHover] = useState(false);
@@ -103,8 +105,10 @@ function Cursor() {
   
   
     return (
+
         <motion.div className={linkHover ? 'cursor-hover' : 'cursor'} variants={variants} style={{translateX: cursorX, translateY: cursorY}}
         ><div className='large-cursor'></div> </motion.div> 
+      
     )
 }
 

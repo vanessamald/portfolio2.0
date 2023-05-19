@@ -4,9 +4,11 @@ import './App.css';
 import Cursor from '../src/components/cursor';
 import Home from '../src/components/Home';
 import Loading from '../src/components/Loading';
+import useThemeStorage from './components/useThemeStorage';
 
 function App() {
   const [ isLoading, setIsLoading ] = useState(true);
+  const [theme, toggleTheme, cursor, componentMounted] = useThemeStorage();
   
   // set loading time
   useEffect(() => {
@@ -17,7 +19,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className={theme}>
       <Cursor/>
       {isLoading ? <Loading/> : <Home/>}
     </div>

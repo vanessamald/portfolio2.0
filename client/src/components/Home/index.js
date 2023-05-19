@@ -4,14 +4,32 @@ import Navigation from '../Navigation';
 import Work from '../Work';
 import Contact from '../Contact';
 import Footer from '../Footer';
+import useThemeStorage from '../useThemeStorage';
+import { motion, AnimatePresence } from 'framer-motion';
+import { TiStarOutline } from "react-icons/ti";
+import { TiWeatherSunny } from "react-icons/ti";
+
 
 function Home() {
+    // set theme
+    const [ theme, themeToggler, componentMounted, isOn, setIsOn] = useThemeStorage();
     const aboutSentence = 'Hi! I am Vanessa Maldonado, a Mexican-American Freelance Web Developer.'
     
     return (
-        <div>
+        <div className={theme}>
             <div className='home-header-container'>
-                <h1 className='home-title text-animation' style={{ animationDelay: '1s'}}>UX/UI Developer</h1>
+                <div>
+                    <h1 className='home-title text-animation' style={{ animationDelay: '1s'}}>Creative Developer</h1>
+                    <div 
+                        data-darkmode={isOn}
+                        onClick={themeToggler}
+                        className={isOn}
+                    >
+                        <motion.div layout className='theme-button' style={{fontSize:'3vw'}}>
+                            {theme === 'dark' ? <TiWeatherSunny/> : <TiStarOutline/> }       
+                        </motion.div>
+                    </div>
+                </div>
                 <Navigation/>
             </div>
             <div className="">

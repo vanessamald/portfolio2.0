@@ -13,15 +13,36 @@ code {
 }
 
 * {
-  background-color: #EDECE7;
+  background-color: var(--body-bg-color);
   /*background-color: #EFE9E4;*/
-  color: #5B4A3B;
+  color: var(--font-color);
 }
 
 *,
 *::before,
 *::after {
   cursor: none;
+}
+
+/* Themes */
+.dark {
+  --font-color: #edece7;
+  --body-bg-color: #997950;/* #997950;*/
+  --alt-bg-color: #444444;
+  --font-family: BlackDelights;
+}
+
+.light {
+  --font-color: #5B4A3B;
+  --body-bg-color: #EDECE7;
+  --alt-bg-color: #444444;
+
+}
+
+.theme-button {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 @font-face {
@@ -68,11 +89,11 @@ code {
   }
   50% {
    
-    border: 0.5px solid #5B4A3B;
+    border: 0.5px solid var(--font-color)
   }
   100% {
  
-    border: 0.5px solid #5B4A3B;
+    border: 0.5px solid var(--font-color);
   }
 }
 
@@ -136,8 +157,8 @@ code {
 .loading-page { 
   height: 100vh;
   overflow-y: hidden;
-  background-color: #444444;
-  color:#EDECE7;
+  background-color: var(--font-color);
+  color:var(--alt-bg-color);
   font-size: 5vw;
   font-family: BlackDelights;
   font-weight: 100;
@@ -147,28 +168,12 @@ code {
 }
 
 .loading-text {
-  background-color: #444444;
-  color: #EDECE7;
+  background-color: var(--font-color);
+  color: var(--body-bg-color);
 }
 
 
 /* Loading Page Ends */
-
-/*
-.cursor {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 30px;
-  height: 30px;
-  border-radius: 16px;
-  border: 1px solid white;
-  background-color: #5B4A3B;
-  mix-blend-mode: difference;
-  z-index: 99999999999;
-  pointer-events: none;
-}
-*/
 
 
 /* Home Styling */
@@ -182,7 +187,7 @@ code {
 }
 
 .text {
-  color: #5B4A3B;
+  color: var(--font-color);
   font-family: BlackDelights;
   font-size: 4vw;
 }
@@ -206,7 +211,7 @@ code {
 
 .profile-pic {
   opacity: 0;
-  border: 1px solid #5B4A3B;
+  border: 1px solid var(--alt-bg-color);
   object-fit: cover;
   width: 400px;
   height: 400px;
@@ -241,7 +246,7 @@ a span span {
 .menu-link {
   font-size: 2vw;
   text-align: right;
-  color:#5B4A3B;
+  color: var(--body-bg-color);
   text-decoration: none;
   margin-right: 6rem;
 }
@@ -251,7 +256,7 @@ a span span {
 }
 
 .menu-link span {
-  background-color: var(--font-color);
+  background-color: var(--body-bg-color);
 }
 
 a span span {
@@ -288,8 +293,8 @@ a span span {
 
 
 .scrolled {
-  background-color: #444444;
-  color: #FFFAF7;
+  background-color: var(--alt-bg-color);
+  color: var(--body-bg-color);
   transition: 2s;
 }
 
@@ -332,14 +337,14 @@ a span span {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  border: 0.5px solid #5B4A3B;
+  border: 0.5px solid var(--alt-bg-color);
   background-color: transparent;
   position: fixed;
   left: 0;
   top: 0;
   transform: translate(-140px, -140px);
 }
-
+/*
 .custom-cursor {
   position: fixed;
   left: 0;
@@ -347,12 +352,13 @@ a span span {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 1px solid #5B4A3B;
+  border: 1px solid var(--font-color);
   background-color: transparent;
   mix-blend-mode: difference;
   z-index: 99999999999;
   pointer-events: none;
 }
+*/
 
 
 .cursor {
@@ -362,8 +368,8 @@ a span span {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 1px solid #5B4A3B;
-  background-color: #5B4A3B;
+  border: 1px solid var(--alt-bg-color);
+  background-color: var(--alt-bg-color);
   z-index: 99999999999;
   pointer-events: none;
 }
@@ -375,7 +381,7 @@ a span span {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 1px solid #5B4A3B;
+  border: 1px solid var(--alt-bg-color);
   background-color: transparent;
   z-index: 99999999999;
   pointer-events: none;
@@ -443,12 +449,12 @@ a span span {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content:space-between;
-  background-color: #444444;
+  background-color: var(--alt-bg-color);
 }
 
 .footer-links {
-  background-color: #444444;
-  color:#EDECE7;
+  background-color: var(--alt-bg-color);
+  color:var(--body-bg-color);
 }
 
 .social-container {
@@ -460,7 +466,7 @@ a span span {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content:space-between;
-  background-color: #444444;
+  background-color: var(--alt-bg-color);
 }
 
 /* Mobile Styling */ 
