@@ -29,7 +29,8 @@ const Loading = () => {
 
   return (
     <div className="loading-page">
-     <h1 className='loading-text'>{typedText}</h1>
+      <h1 className='loading-text'>{typedText}</h1>
+      <div className='loader'></div>
     </div>
   );
 };

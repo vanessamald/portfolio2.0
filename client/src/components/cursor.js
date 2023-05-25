@@ -1,27 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring } from "framer-motion";
-
+import useThemeStorage from './useThemeStorage';
 
 function Cursor() {
- 
-   // const [ cursorVariant, setCursorVariant ] = useState("default");
-   // const [ cursorHover, setCursorHover ] = useState("default");
-    const [linkHover, setLinkHover] = useState(false);
-    //const [hidden, setHidden] = useState(false);
-   
-   /* const mLeave = () => {
-      setHidden(true);
-    };
+  const [ isCursor ] = useThemeStorage();
+  const [linkHover, setLinkHover] = useState(false);
+  
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
 
-    const mEnter = () => {
-      setHidden(false);
-    };
-    */
-
-   // const cursorRef = React.useRef(null);
-    
-    const cursorX = useMotionValue(-100);
-    const cursorY = useMotionValue(-100);
+  const springConfig = { damping: 28, stiffness: 500 };
+  const cursorXSpring = useSpring(cursorX, springConfig);
+  const cursorYSpring = useSpring(cursorY, springConfig);
 
   
     useEffect(() => {
@@ -33,8 +23,6 @@ function Cursor() {
     window.addEventListener("mousemove", moveCursor);
     window.addEventListener("mouseenter", moveCursor);
     window.addEventListener("mouseleave", moveCursor);
-
-
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
@@ -81,7 +69,6 @@ function Cursor() {
       });
     }
     
-
     const removeLinkEvents = () => {
       document.querySelectorAll('a').forEach((el) => {
         el.removeEventListener('mouseenter', setLinkHover(false));
@@ -103,10 +90,9 @@ function Cursor() {
       };
     }, []);
   
-  
     return (
 
-        <motion.div className={linkHover ? 'cursor-hover' : 'cursor'} variants={variants} style={{translateX: cursorX, translateY: cursorY}}
+        <motion.div className={linkHover ? 'cursor-hover' : 'cursor' }   variants={variants} style={{translateX: cursorXSpring, translateY: cursorYSpring}}
         ><div className='large-cursor'></div> </motion.div> 
       
     )

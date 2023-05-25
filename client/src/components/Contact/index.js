@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
 const Contact = () => {
+    // state for contact form 
+    const [ contactForm, setContactForm ] = useState('hidden-form')
+
     // contact form status
     const [ status, setStatus ] = useState('Submit');
 
@@ -55,7 +58,13 @@ const Contact = () => {
     return (
         <div className='contact-container' id='contact'>
             <h3 className='contact-title'>Let's Connect!</h3>
-                <Form onSubmit={submitForm} className='form-content'>
+            <div className='social-link-container'>
+                    <a className='social-links' href='https://www.linkedin.com/in/vanessa-maldonado-807344191/' target='_blank'>LinkedIn</a>
+                    <a className='social-links' href='https://github.com/vanessamald' target='_blank'>Github</a>
+                    <a className='social-links'>Email</a>
+            </div>
+            <div className={contactForm}>
+            <Form onSubmit={submitForm} className='form-content'>
                 <Form.Group className="form-group" controlId="name">
                     <Form.Label className='form-name'></Form.Label>
                     <Form.Control className='form-input'
@@ -109,7 +118,7 @@ const Contact = () => {
                 </button>
                 </div> 
             </Form>
-            
+            </div>
         </div>
     )
 }

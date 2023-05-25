@@ -33,6 +33,7 @@ function About() {
               <p className={`about-me-text ${isScrolled ? 'scrolled' : ''}`}>Learn more about me below...</p>
             </div>
             <div className='about-me-container2'>
+              {/*}
               <p className='about-me-text2'>I worked as a <em>Pharmacy Technician</em> for 8 years before transitioning into Software Development.</p>
               <p>Why did I choose the <em>Full Stack</em> path? </p>
               <p>Although I love being creative and experimenting with how the UI looks, I also enjoy owning a project from beginning to end. </p>
@@ -40,6 +41,9 @@ function About() {
               <p>
                   When I'm not coding (yes I love coding for fun!) you can find me curled up with my dogs <em>reading</em> a book. Currently reading <em><a href='https://www.goodreads.com/book/show/57789637-daughter-of-the-moon-goddess' target='_blank'>The Daughter of the Moon Goddess</a></em>. 
               </p>
+              */}
+              <p className='about-me-text2'>I'm currently looking for remote roles and also open to Freelance work.</p>
+              <p>Passionate about responsive, and interactive design. Well-known for being open and collaborative, leading with compassion and having an eye for design.</p>
             </div>
 
             <div className={`skills-edu-container ${isScrolled ? 'scrolled2' : ''}`}>
