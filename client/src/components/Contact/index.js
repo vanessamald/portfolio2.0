@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 
 const Contact = () => {
-    // state for contact form 
+    // state for contact to view contact form 
     const [ contactForm, setContactForm ] = useState('hidden-form')
+
+    const handleClick = () => { 
+        setContactForm('contact-form')
+    }
 
     // contact form status
     const [ status, setStatus ] = useState('Submit');
@@ -61,7 +65,7 @@ const Contact = () => {
             <div className='social-link-container'>
                     <a className='social-links' href='https://www.linkedin.com/in/vanessa-maldonado-807344191/' target='_blank'>LinkedIn</a>
                     <a className='social-links' href='https://github.com/vanessamald' target='_blank'>Github</a>
-                    <a className='social-links'>Email</a>
+                    <a onClick={handleClick} className='social-links'>Email</a>
             </div>
             <div className={contactForm}>
             <Form onSubmit={submitForm} className='form-content'>

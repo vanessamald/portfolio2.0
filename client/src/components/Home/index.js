@@ -9,8 +9,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiMoon } from "react-icons/fi";
 import { TiWeatherSunny } from "react-icons/ti";
 
-
 function Home() {
+   
     // set theme
     const [ theme, themeToggler, componentMounted, isOn, setIsOn] = useThemeStorage();
     const aboutSentence = 'Hi! I am Vanessa Maldonado, a Freelance Web Developer: I make websites come to life.'
