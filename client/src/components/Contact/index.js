@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
+import useScroll from '../useScroll';
 
 const Contact = () => {
+   const isScrolled = useScroll();
+
     // state for contact to view contact form 
     const [ contactForm, setContactForm ] = useState('hidden-form')
 
@@ -63,12 +66,13 @@ const Contact = () => {
         <div className='contact-container' id='contact'>
             <h3 className='contact-title'>Let's Connect!</h3>
             <div className='social-link-container'>
-                    <a className='social-links' href='https://www.linkedin.com/in/vanessa-maldonado-807344191/' target='_blank'>LinkedIn</a>
-                    <a className='social-links' href='https://github.com/vanessamald' target='_blank'>Github</a>
-                    <a onClick={handleClick} className='social-links'>Email</a>
+                    <a  href='https://www.linkedin.com/in/vanessa-maldonado-807344191/' target='_blank'>LinkedIn</a>
+                    <a  style={{animationDelay: '3s'}} href='https://github.com/vanessamald' target='_blank'>Github</a>
+                    <a onClick={handleClick} style={{animationDelay: '4s'}} >INQUIRE</a>
             </div>
             <div className={contactForm}>
-            <Form onSubmit={submitForm} className='form-content'>
+                <div className='contact-form-content'>
+                <Form onSubmit={submitForm} className='form-content'>
                 <Form.Group className="form-group" controlId="name">
                     <Form.Label className='form-name'></Form.Label>
                     <Form.Control className='form-input'
@@ -122,6 +126,7 @@ const Contact = () => {
                 </button>
                 </div> 
             </Form>
+                </div>
             </div>
         </div>
     )

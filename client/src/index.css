@@ -71,6 +71,24 @@ code {
 }
 
 /* Animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
 @keyframes line-draw {
   0% {
     width: 0%;
@@ -128,9 +146,25 @@ code {
     
   }
 }
-
-
 /* Animations Ends */
+
+/* Misc Styling */ 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+/* Misc Styling */
 
 /* Marquee Styling */
 .marquee-flex {
@@ -339,6 +373,7 @@ a span span {
   z-index: 9999;
   background-color: var(--font-color);
   border-radius: 25px; 
+  transition: 0.4;
 }
 
 .menu-content {
@@ -444,18 +479,41 @@ a span span {
 /* Work Styling Start */
 .work-hidden-container {
   font-size: 1vw;
-  
 }
 
 .work-image {
-  width: 30rem;
-  height: auto;
+  left: 0;
+  width: auto;
+  height: 20rem;
+  
 }
 
 .work-image-container {
   display: flex;
   flex-direction: row;
 }
+
+.work-title {
+  
+  color: var(--body-bg-color);
+  
+  font-size: 10vw;
+  font-style: italic;
+  font-family: BlackDelights;
+  background-color: transparent;
+}
+
+.work-wrapper {
+  padding: 50px;
+}
+
+.work-arrow {
+  
+}
+
+
+
+
 
 /* Work Styling Start */
 
@@ -583,17 +641,44 @@ a span span {
 }
 
 /* Contact Styling */
+.scroll-down {
+  opacity: 1;
+  font-size: 8vw;
+  transition: 1s;
+  animation: slideIn 3s forwards; /* Apply the transition when scrolled */
+}
+
+.scroll-up {
+  opacity: 0;
+  animation-delay: 2s;
+  transition: 3s;
+  animation: slideInLeft 3s forwards; /* Apply the transition when scrolled */
+}
+
+.slide-text {
+  font-size: 8vw;
+  transform: translateX(-100vw);
+   /* Initial position outside the viewport */
+ /* Add transition animation */
+}
+
 .hidden-form {
   display: none;
 }
 
 .contact-form {
-  display: block;
-  position: absolute;
-  width: 100vh;
-  height: 100vh;
+  position: fixed;
+  width: 100%;
+  height: 100%;
   left: 0;
-  top: 0vh;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form-content {
+  opacity: 0.7;
 }
 
 .contact-title {
@@ -686,6 +771,10 @@ a span span {
   }
   .home-intro-container {
     padding: 3rem;
+  }
+  .flex-row {
+    display: flex;
+    flex-direction: column;
   }
   .work-image-container {
     flex-direction: column-reverse;
