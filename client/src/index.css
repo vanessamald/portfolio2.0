@@ -16,6 +16,7 @@ code {
   background-color: var(--body-bg-color);
   /*background-color: #EFE9E4;*/
   color: var(--font-color);
+  scroll-behavior: smooth;
   
 }
 
@@ -52,7 +53,7 @@ code {
   position: absolute;
   top: 0;
   margin-left: 2rem;
-  font-size: 3vw;
+  font-size: 2rem;
   font-weight: 100;
   margin-top: 10px;
   margin-left: 10px;
@@ -323,6 +324,7 @@ a span span {
 
 .close-btn {
   border: none;
+  
   margin-right: 1rem;
   z-index: 99999;
   position: relative;
@@ -334,28 +336,28 @@ a span span {
 }
 
 .change .close-btn {
-  background-color: var(--body-bg-color);
+  
 }
 
 .change .close-line1 {
   transform: translateY(12px) rotate(45deg);
-  background-color: var(--body-bg-color);
+  
 }
 
 .change .close-line2 {
-  background-color: var(--body-bg-color);
-  height: 2px;
+  
+  height: 1px;
   margin: 10px 0;
-  width: 35px;
+  width: 30px;
   transition: .4s;
-  transform: translateY(0px) rotate(-45deg);
+  transform: translateY(1px) rotate(-45deg);
 }
 
 .close-line1, .close-line2 {
   background-color: var(--font-color);
-  height: 2px;
+  height: 1px;
   margin: 10px 0;
-  width: 35px;
+  width: 30px;
   transition: .4s;
 }
 
@@ -368,48 +370,46 @@ a span span {
   position: absolute;
   top: 0;
   right: 0;
-  height: 25vw;
-  width: 25vw;
   z-index: 9999;
-  background-color: var(--font-color);
+  background-color: var(--alt-bg-color);
   border-radius: 25px; 
   transition: 0.4;
+  padding: 35px 30px;
 }
 
 .menu-content {
-  background-color: var(--font-color);
-  height: 25vw;
+  background-color: var(--alt-bg-color);
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 25px;
+  margin-top: 20px;
   
 }
 
 .menu-link {
-  font-size: 2vw;
+  background-color: var(--alt-bg-color);
+  font-family: Metropolitan;
+  font-size: 16px;
   text-decoration: none;
-  margin-bottom: 1rem;
+  
 }
 
 .menu-link:hover {
-  opacity: 0.5;
-  
+  text-decoration: underline; 
 }
 
 .menu-link span {
-  color: var(--body-bg-color);
-  background-color: var(--font-color);
-
+  background-color: var(--alt-bg-color);
+  color: #edece7;
 }
 
 .social-link-container {
-  
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -417,8 +417,9 @@ a span span {
 .social-links {
   color: var(--font-color);
   text-decoration: none;
-  font-size: 8vw;
+  font-size: 10vw;
   border: none;
+  font-family: Metropolitan;
 }
 
 a span span {
@@ -477,8 +478,18 @@ a span span {
 /* About Styling Ends */
 
 /* Work Styling Start */
+.numbers {
+  font-size: 180px;
+}
+
 .work-hidden-container {
   font-size: 1vw;
+}
+
+.work-image-before {
+  display: none;
+  width: auto;
+  height: 20rem;
 }
 
 .work-image {
@@ -486,6 +497,10 @@ a span span {
   width: auto;
   height: 20rem;
   
+}
+
+.work-image-ani {
+  animation: textReveal 5s forwards;
 }
 
 .work-image-container {
@@ -501,6 +516,7 @@ a span span {
   font-style: italic;
   font-family: BlackDelights;
   background-color: transparent;
+  margin-right: 2rem;
 }
 
 .work-wrapper {
@@ -508,7 +524,12 @@ a span span {
 }
 
 .work-arrow {
-  
+  position: absolute;
+  left: 0;
+}
+
+.work-container {
+  overflow-x: hidden;
 }
 
 
@@ -645,21 +666,19 @@ a span span {
   opacity: 1;
   font-size: 8vw;
   transition: 1s;
-  animation: slideIn 3s forwards; /* Apply the transition when scrolled */
+  animation: slideIn 5s forwards; 
 }
 
 .scroll-up {
   opacity: 0;
   animation-delay: 2s;
   transition: 3s;
-  animation: slideInLeft 3s forwards; /* Apply the transition when scrolled */
+  animation: slideInLeft 5s forwards; 
 }
 
 .slide-text {
   font-size: 8vw;
   transform: translateX(-100vw);
-   /* Initial position outside the viewport */
- /* Add transition animation */
 }
 
 .hidden-form {
@@ -691,20 +710,25 @@ a span span {
 }
 
 .form-content {
-  width: 100px;
+
 }
 
 .form-input {
   border: none;
+  font-family: Metropolitan;
+  height: 2.5rem;
+  width: 75vw;
 }
 
 .form-input-message {
   border:none;
-  height: 100px;
+  font-family: Metropolitan;
+  height: 5rem;
+  width: 75vw;
 }
 
 .form-button {
-  border: 1px solid black;
+  border: 1px solid var(--font-color);
   border-radius: 50px;
   margin-top: 1rem;
   width: 10rem;
@@ -712,8 +736,8 @@ a span span {
 }
 
 .contact-line {
-  border-bottom: 0.5px solid black;
-  width: 10rem;
+  border-bottom: 0.5px solid var(--font-color);
+  width: 75vw;
 }
 
 .footer-container {
@@ -762,8 +786,7 @@ a span span {
     font-size: 4vw;
   }
   .menu-link {
-    margin-right: 3rem;
-    font-size: 4vw;
+    
   }
   .profile-pic {
     width: 300px;
@@ -772,16 +795,21 @@ a span span {
   .home-intro-container {
     padding: 3rem;
   }
-  .flex-row {
-    display: flex;
-    flex-direction: column;
+ 
+  .work-title {
+    margin-right: 0rem;
   }
   .work-image-container {
     flex-direction: column-reverse;
   }
   .work-image {
-    width: 13rem;
-    height: auto;
+    display: none;
+  }
+  .work-wrapper {
+    padding: 0px;
+  }
+  .slide-text {
+    margin-left: 2rem;
   }
   .education-container, .skills-container, .work-container, .about-me-container, .about-me-container2 {
   padding: 3rem;

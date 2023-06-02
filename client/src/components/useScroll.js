@@ -7,7 +7,7 @@ const useScroll = () => {
         const handleScroll = () => {
           const scrollTop = window.pageYOffset;
     
-          if (scrollTop > 800) {
+          if (scrollTop > 1000) {
             setIsScrolled(true);
           } else {
             setIsScrolled(false);

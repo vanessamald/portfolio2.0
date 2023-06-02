@@ -24,6 +24,11 @@ function Navigation () {
         handleStyles();
     }
 
+    const handleOut = () => {
+        setToggle(toggle);
+        handleStyles();
+    }
+
     // nav animations
     const aboutText = 'About';
     const SplitText = () => {
@@ -65,7 +70,7 @@ function Navigation () {
                     }
     return (
         <div>
-            <button className='close-btn' onClick={handleClick}>
+            <button className='close-btn' onMouseEnter={handleClick} onClick={handleClick}>
                 <div className={button}>
                     <div className='close-line1'></div>
                     <div className='close-line2'></div>

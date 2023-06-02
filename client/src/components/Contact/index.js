@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Form from 'react-bootstrap/Form';
 import useScroll from '../useScroll';
 
 const Contact = () => {
+    const ref = useRef(null)
+    const isInView = useScroll(ref)
+
    const isScrolled = useScroll();
 
     // state for contact to view contact form 
@@ -63,12 +66,12 @@ const Contact = () => {
             }; 
 
     return (
-        <div className='contact-container' id='contact'>
+        <div className='contact-container' ref={ref}>
             <h3 className='contact-title'>Let's Connect!</h3>
-            <div className='social-link-container'>
-                    <a  href='https://www.linkedin.com/in/vanessa-maldonado-807344191/' target='_blank'>LinkedIn</a>
-                    <a  style={{animationDelay: '3s'}} href='https://github.com/vanessamald' target='_blank'>Github</a>
-                    <a onClick={handleClick} style={{animationDelay: '4s'}} >INQUIRE</a>
+            <div className='social-link-container' id='contact'>
+                    <a className={isInView ? 'text-animation social-links transparent' : ''}  href='https://www.linkedin.com/in/vanessa-maldonado-807344191/' target='_blank'>LinkedIn</a>
+                    <a className={isInView ? 'text-animation social-links transparent' : ''}  style={{animationDelay: '3s'}} href='https://github.com/vanessamald' target='_blank'>Github</a>
+                    <a className={isInView ? 'text-animation social-links transparent' : ''}  onClick={handleClick} style={{animationDelay: '4s'}} >Email</a>
             </div>
             <div className={contactForm}>
                 <div className='contact-form-content'>
@@ -111,7 +114,7 @@ const Contact = () => {
                         onChange={(e) => setMessage(e.target.value)}  
                         as="textarea" 
                         placeholder="Message"
-                        rows={3} 
+                        
                         required
                     />
                     <div className='contact-line'></div>

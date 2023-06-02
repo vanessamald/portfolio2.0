@@ -76,6 +76,8 @@ function About() {
                 <p>Heroku</p>
                 <p>Visual Studio Code</p>
                 <p>GoDaddy</p>
+                <h4>Testing</h4>
+                <p>Jest</p>
                 <div className='line-div'></div>
                 <h3>Social Media & Marketing</h3>
                 <p> SEO / Social Media Management & Development  / Content Creation / Copywriting / Branding / Infographics </p>

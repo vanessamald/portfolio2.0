@@ -54,6 +54,8 @@ function Home() {
             <Work/>
             <Contact/>
             <Footer/>
+            
+            
         </div>
     )
 }
