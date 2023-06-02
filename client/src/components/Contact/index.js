@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Form from 'react-bootstrap/Form';
 import useScroll from '../useScroll';
+import {  motion, useInView } from 'framer-motion';
 
 const Contact = () => {
     const ref = useRef(null)
-    const isInView = useScroll(ref)
+    const isInView = useInView(ref)
 
    const isScrolled = useScroll();
 

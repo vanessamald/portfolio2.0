@@ -5,6 +5,7 @@ import Cursor from './components/Cursor';
 import Home from '../src/components/Home';
 import Loading from '../src/components/Loading';
 import useThemeStorage from './components/useThemeStorage.js';
+import Work from './components/Work';
 
 function App() {
   const [ isLoading, setIsLoading ] = useState(true);

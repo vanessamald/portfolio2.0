@@ -150,10 +150,40 @@ code {
 /* Animations Ends */
 
 /* Misc Styling */ 
+.container-large {
+  height: 95vh;
+}
+
+/* Text Styling */ 
+.small-text {
+  font-size: 12px;
+  font-family: Metropolitan;
+}
+
+.medium-text {
+  font-size: 30px;
+  font-weight: 400;
+  font-family: BlackDelights;
+}
+
+.text-center {
+  text-align: center;
+  text-align: -webkit-center;
+}
+
+/* Flex Styling */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
-
 }
 
 .flex-column {
@@ -161,9 +191,19 @@ code {
   flex-direction: column;
 }
 
+.flex-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+/* Flex Styling Ends*/
+
+/* Background Styling */ 
 .transparent {
   background-color: transparent;
 }
+/* Background Styling Ends */
+
+
 
 /* Misc Styling */
 
@@ -273,8 +313,14 @@ code {
   justify-content: space-between;
 }
 
+.home-title-container {
+  padding: 25px;
+  height: 100vh;
+  
+}
+
 .home-title {
-  font-size: 4vw;
+  font-size: 6vw;
   margin-top: 10rem;
   margin-left: 6rem;
   font-family: Metropolitan;
@@ -282,9 +328,9 @@ code {
 }
 
 .home-title2 {
-  font-size: 10vw;
-  margin-top: -2rem;
-  margin-bottom: 20rem;
+  font-size: 15vw;
+  margin-top: -3rem;
+  
   font-family: Metropolitan;
   font-weight: 100;
 }
@@ -441,6 +487,11 @@ a span span {
   padding: 5rem;
 }
 
+.about-me-container {
+  height: 95vh;
+  
+}
+
 .about-me-text {
   font-size: 6vw;
   
@@ -455,7 +506,7 @@ a span span {
 }
 
 
-.scrolled {
+.about-scrolled {
   background-color: var(--alt-bg-color);
   color: var(--body-bg-color);
   transition: 2s;
@@ -784,6 +835,9 @@ a span span {
   .home-title {
     margin-left: 3rem;
     font-size: 4vw;
+  }
+  .home-title2 {
+    margin-top: -1rem;
   }
   .menu-link {
     
