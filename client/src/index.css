@@ -17,7 +17,6 @@ code {
   /*background-color: #EFE9E4;*/
   color: var(--font-color);
   scroll-behavior: smooth;
-  
 }
 
 *,
@@ -202,9 +201,8 @@ code {
 }
 
 .large-text {
-  font-size: 6vw;
-  font-style: italic;
-  font-family: BlackDelights;
+  font-size: 2rem;
+  font-family: Metropolitan;
   font-weight: 100;;
   line-height: 1em;
 }
@@ -238,6 +236,8 @@ code {
   display: flex;
   flex-direction: row-reverse;
 }
+
+
 /* Flex Styling Ends*/
 
 /* Background Styling */ 
@@ -593,6 +593,7 @@ a span span {
 /* Work Styling Start */
 .numbers {
   font-size: 180px;
+  font-family: BlackDelights;
 }
 
 .work-hidden-container {

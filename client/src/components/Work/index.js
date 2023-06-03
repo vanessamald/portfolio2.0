@@ -1,13 +1,7 @@
 import React, { useState, useRef } from 'react';
 import evokeDesktop1 from '../../assets/images/evoke-desktop1.png';
 import friendsDesktop1 from '../../assets/images/friends-desktop.png';
-import evokeMobile from '../../assets/images/evoke-phone1.png';
-import friendsMobile from '../../assets/images/friends-cover.png';
 import revivirDesktop from '../../assets/images/revivir.png';
-import revivirMobile from '../../assets/images/revivir-mobile.png';
-import { BsArrowUpRight } from 'react-icons/bs';
-import useScroll from '../useScroll';
-import AnimatedNumbers from '../AnimatedNumbers';
 import {  motion, useInView } from 'framer-motion';
 
 function Work() {
@@ -36,27 +30,18 @@ function Work() {
     return (
         <div className='work-container' id='work' ref={ref}>
             <h2>Featured Works</h2>
-           
-            
-            <div className='work-wrapper flex-row' >
+            <div className='work-wrapper flex-row flex-center'>
                 <a className={isInView ? 'work-image-ani' : ''} href='https://www.evokediagnostics.com' target='_blank' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}><img className='work-image' src={evokeDesktop1}></img></a>
-               
-                <div className='work-title flex-row' >
-                {isInView ? <AnimatedNumbers targetNumber={1}/> : ''}
-                
-                    <div className={isInView ? 'scroll-down' : 'scroll-up'} style={{backgroundColor: 'transparent'}}>
-                        <h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Evoke</h3>  
-                        
+                <div className='work-title flex-row flex-center'>
+                    <div className='flex-row'>
+                        <p className='numbers large-text'>0</p>
+                        <p className={`numbers large-text transparent ${isInView ? 'text-animation' : ''} `}>1</p>
                     </div>
-                    {/*
-                    {isHovering &&  (
-                        <BsArrowUpRight className='transparent work-arrow'/>
-                    )}
-                    */}
+                    <div className={isInView ? 'scroll-down' : 'scroll-up'} style={{backgroundColor: 'transparent'}}>
+                        <h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Evoke</h3>    
+                    </div>
                 </div>
             </div>
-
-
             <br/>
             <div className='line-div'></div>
             <br/>
@@ -79,50 +64,33 @@ function Work() {
                 <img alt='Evoke Neurodiagnostics mobile view' src={evokeMobile} className='work-image'></img>
             </div>
             */}
-            <div className='work-wrapper flex-row'>
-                
-                
-                <div className='work-title flex-row' >
-                    {isInView ? <AnimatedNumbers targetNumber={2} /> : ''}
-                    <div className={isInView ? 'scroll-down' : 'scroll-up'} style={{backgroundColor: 'transparent', animationDelay:'2s'}}>
-                       
-                        <h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Revivir Studio</h3>
+            <div className='work-wrapper flex-row flex-center'>
+                <div className='work-title flex-row flex-center' ref={ref}>
+                   <div className='flex-row'>
+                        <p className='numbers large-text'>0</p>
+                        <p className={`numbers large-text transparent ${isInView ? 'text-animation' : ''} `}>2</p>
                     </div>
-                    {/*
-                    {isHovering2 &&  (
-                    <BsArrowUpRight className='transparent work-arrow'/>
-                    )}  
-                    */}  
+                    <div className={isInView ? 'scroll-down' : 'scroll-up'} style={{backgroundColor: 'transparent', animationDelay:'2s'}}>
+                       <h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Revivir Studio</h3>
+                    </div> 
                 </div>
                 <a className={isInView ? 'work-image-ani' : ''} href='https://www.revivirstudio.com/' target='_blank' onMouseOver={handleMouseOver2} onMouseOut={handleMouseOut2}><img className='work-image' src={revivirDesktop}></img></a>
             </div>
-             
-           
             <br/>
             <div className='line-div'></div>
             <br/>
-
-            <div className='work-wrapper flex-row'>
+            <div className='work-wrapper flex-row flex-center'>
                 <a className={isInView ? 'work-image-ani' : ''} href='https://vanessamald.github.io/API-timed-quiz/' target='_blank' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}><img className='work-image' src={friendsDesktop1}></img></a>
-                
-                <div className='work-title flex-row' ref={ref}>
-                    {isInView ? <AnimatedNumbers targetNumber={3}/> : ''}
-                    <div className={isInView? 'scroll-down' : 'scroll-up'} style={{backgroundColor: 'transparent', animationDelay: '3s'}}>
-                        
-                        <h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Friends Trivia</h3>
+                <div className='work-title flex-row flex-center' ref={ref}>
+                    <div className='flex-row'>
+                        <p className='numbers large-text'>0</p>
+                        <p className={`numbers large-text transparent ${isInView ? 'text-animation' : ''} `}>3</p>
                     </div>
-                    {/*
-                    {isHovering &&  (
-                    <BsArrowUpRight className='transparent work-arrow'/>
-                    )} 
-                    */}   
+                    <div className={isInView? 'scroll-down' : 'scroll-up'} style={{backgroundColor: 'transparent', animationDelay: '3s'}}>
+                        <h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Friends Trivia</h3>
+                    </div> 
                 </div>
             </div>
-
-
-
-            
-            
             {/*
                 {isHovering2 &&  (
                     <div className='work-hidden-container'>
@@ -132,7 +100,6 @@ function Work() {
                         <p>HTML, CSS, JavaScript, LocalStorage</p>
                     </div>
                 )}
-             
                 */}
         </div>
     )

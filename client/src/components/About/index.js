@@ -76,16 +76,18 @@ function About() {
             </div>
             // {`container-large background-transition ${isScrolled ? 'background-slideup' : ''}`}
                   */}
+                  <div ref={ref}>
             {isScrolled ? 
             
-            <div className='background-light' ref={ref}>
-            <p className='about-me-text padding-left background-light'> My friends and colleagues would describe me as <em className={`about-em background-light ${isInView ? 'text-reveal' : 'text-opacity'}`}>empathetic</em>, <em className={`about-em background-light ${isScrolled ? 'text-reveal' : 'text-opacity'}`}>driven</em>, and <em className={`background-light about-em ${isScrolled? 'text-reveal' : 'text-opacity'}`}>creative</em>. 
+ <div className='background-light' >
+            <p className='about-me-text padding-left background-light'> My friends and colleagues would describe me as <em className={`about-em background-light ${isInView ? 'text-reveal' : 'text-opacity'}`}>empathetic</em>, <em className={`about-em background-light ${isInView ? 'text-reveal' : 'text-opacity'}`}>driven</em>, and <em className={`background-light about-em ${isInView ? 'text-reveal' : 'text-opacity'}`}>creative</em>. 
                 I want to help users have an intuitive experience through <em className={`background-light about-em ${isInView ? 'text-reveal' : 'text-opacity'}`}>artistic</em> and <em className={`about-em background-light ${isInView ? 'text-reveal' : 'text-opacity'}`}>seamless</em> designs.</p>
             </div>
            : ' '}  
-           
-            <div className='about-me-container flex-column flex-center'>
-              <p ref={ref} className='small-text text-center'>What I do</p>
+           </div>
+
+            <div className='about-me-container flex-column flex-center' ref={ref}>
+              <p  className='small-text text-center'>What I do</p>
              
               {aboutSentence2.split(' ').map((word, index) => (
                         <React.Fragment key={index}>
