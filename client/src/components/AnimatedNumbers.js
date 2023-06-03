@@ -8,13 +8,13 @@ const AnimatedNumbers = ({ targetNumber }) => {
     if (currentNumber < targetNumber) {
       animationInterval = setInterval(() => {
         setCurrentNumber((prevNumber) => prevNumber + 1);
-      }, 500); 
+      }, 1000); 
     }
 
     return () => clearInterval(animationInterval);
   }, [currentNumber, targetNumber]);
 
-  return <div className='transparent numbers'>0{currentNumber}</div>;
+  return <div className='transparent numbers large-text'>0{currentNumber}</div>;
 };
 
 export default AnimatedNumbers;

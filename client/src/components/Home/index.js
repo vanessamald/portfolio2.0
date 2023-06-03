@@ -1,15 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import About from '../About/index';
 import Navigation from '../Navigation';
 import Work from '../Work';
 import Contact from '../Contact';
 import Footer from '../Footer';
 import useThemeStorage from '../useThemeStorage';
-import { motion, AnimatePresence } from 'framer-motion';
 import { FiMoon } from "react-icons/fi";
 import { TiWeatherSunny } from "react-icons/ti";
+import {  motion, useInView } from 'framer-motion';
+import useScroll from '../useScroll';
 
-function Home() {  
+function Home() { 
+    const ref = useRef(null);
+    const isInView = useScroll(ref); 
+
+
+
     // set theme
     const [ theme, themeToggler, componentMounted, isOn, setIsOn] = useThemeStorage();
  
@@ -34,11 +40,7 @@ function Home() {
                 <h1 className='transparent home-title text-animation' style={{ animationDelay: '1s'}}>Creative</h1>
                 <h1 className='transparent home-title2 text-animation' style={{ animationDelay: '2s'}}>Developer</h1>
                 {/*<img src={require("../../assets/images/profile-pic.jpg")} alt="profile picture" className="profile-pic"/>*/}
-                <div className='home-intro-container'>
-                    
-                    
-                    
-                </div> 
+               
             </div>
             <About/>
             <Work/>

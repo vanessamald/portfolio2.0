@@ -8,10 +8,11 @@ import revivirMobile from '../../assets/images/revivir-mobile.png';
 import { BsArrowUpRight } from 'react-icons/bs';
 import useScroll from '../useScroll';
 import AnimatedNumbers from '../AnimatedNumbers';
+import {  motion, useInView } from 'framer-motion';
 
 function Work() {
-    const ref = useRef(null)
-    const isInView = useScroll(ref)
+    const ref = useRef(null);
+    const isInView = useInView(ref);
 
     const [ isHovering, setIsHovering ] = useState(false);
     const [ isHovering2, setIsHovering2 ] = useState(false);
@@ -33,24 +34,25 @@ function Work() {
     }
 
     return (
-        <div className='work-container' id='work'>
+        <div className='work-container' id='work' ref={ref}>
             <h2>Featured Works</h2>
            
             
-            <div className='work-wrapper flex-row'>
+            <div className='work-wrapper flex-row' >
                 <a className={isInView ? 'work-image-ani' : ''} href='https://www.evokediagnostics.com' target='_blank' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}><img className='work-image' src={evokeDesktop1}></img></a>
                
-                <div className='work-title flex-row'>
-                <AnimatedNumbers targetNumber={1}/>
+                <div className='work-title flex-row' >
+                {isInView ? <AnimatedNumbers targetNumber={1}/> : ''}
                 
                     <div className={isInView ? 'scroll-down' : 'scroll-up'} style={{backgroundColor: 'transparent'}}>
-                        <h3 className='slide-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Evoke</h3>  
+                        <h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Evoke</h3>  
                         
                     </div>
-                    
+                    {/*
                     {isHovering &&  (
                         <BsArrowUpRight className='transparent work-arrow'/>
-                    )} 
+                    )}
+                    */}
                 </div>
             </div>
 
@@ -80,16 +82,17 @@ function Work() {
             <div className='work-wrapper flex-row'>
                 
                 
-                <div className='work-title flex-row'>
-                    <AnimatedNumbers targetNumber={2} />
+                <div className='work-title flex-row' >
+                    {isInView ? <AnimatedNumbers targetNumber={2} /> : ''}
                     <div className={isInView ? 'scroll-down' : 'scroll-up'} style={{backgroundColor: 'transparent', animationDelay:'2s'}}>
                        
-                        <h3 className='slide-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Revivir Studio</h3>
+                        <h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Revivir Studio</h3>
                     </div>
-                    
+                    {/*
                     {isHovering2 &&  (
                     <BsArrowUpRight className='transparent work-arrow'/>
-                    )}    
+                    )}  
+                    */}  
                 </div>
                 <a className={isInView ? 'work-image-ani' : ''} href='https://www.revivirstudio.com/' target='_blank' onMouseOver={handleMouseOver2} onMouseOut={handleMouseOut2}><img className='work-image' src={revivirDesktop}></img></a>
             </div>
@@ -102,16 +105,17 @@ function Work() {
             <div className='work-wrapper flex-row'>
                 <a className={isInView ? 'work-image-ani' : ''} href='https://vanessamald.github.io/API-timed-quiz/' target='_blank' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}><img className='work-image' src={friendsDesktop1}></img></a>
                 
-                <div className='work-title flex-row'>
-                    <AnimatedNumbers targetNumber={3}/>
+                <div className='work-title flex-row' ref={ref}>
+                    {isInView ? <AnimatedNumbers targetNumber={3}/> : ''}
                     <div className={isInView? 'scroll-down' : 'scroll-up'} style={{backgroundColor: 'transparent', animationDelay: '3s'}}>
                         
-                        <h3 className='slide-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Friends Trivia</h3>
+                        <h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Friends Trivia</h3>
                     </div>
-                    
+                    {/*
                     {isHovering &&  (
                     <BsArrowUpRight className='transparent work-arrow'/>
-                    )}    
+                    )} 
+                    */}   
                 </div>
             </div>
 

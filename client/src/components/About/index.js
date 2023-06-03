@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import Marquee from '../Marquee';
 import {  motion, useInView } from 'framer-motion';
 
 function About() {
-  const ref = useRef(null)
-  const isInView = useInView(ref)
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   const aboutSentence = 'Hi! I am Vanessa Maldonado, a Freelance Web Developer.';
   const aboutSentence2 = 'I make websites come to life.';
@@ -33,16 +33,15 @@ function About() {
 
     return (
         
-        <div className='about-container' >
-            
-
-            <div id='about' className='about-me-container text-center'>
-              <p ref={ref} className='small-text text-center'>Who I am</p>
+        <div className='about-container' id='about'>
+          <div ref={ref}>
+          <div  className={`container-large about-me-container text-center background-transition ${isScrolled ? 'background-slideup' : ''}`}>
+              <p  className={`small-text text-center background-light ${isScrolled ? '' : 'text-opacity'}`}>Who I am</p>
               {aboutSentence.split(' ').map((word, index) => (
                         <React.Fragment key={index}>
                         {index >= 0 && ' '}
                         
-                        <span style={{ animationDelay: `${index * 0.3}s` }} className={`medium-text text transparent ${isScrolled ?  'text-animation' : ''} `}>
+                        <span style={{ animationDelay: `${index * 0.3}s` }} className={`background-light medium-text transparent ${isScrolled ?  'text-animation' : 'hidden-text'} `}>
                            {word}
                         </span>
                         
@@ -51,6 +50,10 @@ function About() {
                        ))
                     }
             </div>
+          </div>
+            
+
+            
             {/*
             <div ref={ref} className={`about-me-container ${isInView ? 'about-scrolled' : ''}`} id='about'>
             
@@ -71,11 +74,16 @@ function About() {
               <p>Passionate about responsive, and interactive design. Well-known for being open and collaborative, leading with compassion and having an eye for design.</p>
               
             </div>
-            */}
-            <div className='about-me-container'>
-            <p className='about-me-text'> My friends and colleagues would describe me as <em className='about-em'>empathetic</em>, <em className='about-em'>driven</em>, and <em className='about-em'>creative</em>. 
-                I want to help users have an intuitive experience through <em className='about-em'>artistic</em> and <em className='about-em'>seamless</em> designs.</p>
+            // {`container-large background-transition ${isScrolled ? 'background-slideup' : ''}`}
+                  */}
+            {isScrolled ? 
+            
+            <div className='background-light' ref={ref}>
+            <p className='about-me-text padding-left background-light'> My friends and colleagues would describe me as <em className={`about-em background-light ${isInView ? 'text-reveal' : 'text-opacity'}`}>empathetic</em>, <em className={`about-em background-light ${isScrolled ? 'text-reveal' : 'text-opacity'}`}>driven</em>, and <em className={`background-light about-em ${isScrolled? 'text-reveal' : 'text-opacity'}`}>creative</em>. 
+                I want to help users have an intuitive experience through <em className={`background-light about-em ${isInView ? 'text-reveal' : 'text-opacity'}`}>artistic</em> and <em className={`about-em background-light ${isInView ? 'text-reveal' : 'text-opacity'}`}>seamless</em> designs.</p>
             </div>
+           : ' '}  
+           
             <div className='about-me-container flex-column flex-center'>
               <p ref={ref} className='small-text text-center'>What I do</p>
              
@@ -89,9 +97,10 @@ function About() {
                        ))
                     }
             </div>
+            
+          
 
-
-            <div className={`skills-edu-container ${isInView ? 'scrolled2' : ''}`}>
+            <div className={`skills-edu-container ${isInView ? '' : ''}`}>
               <p className='small-text text-center'>How I do it</p>
               <div className='container-large'>
                 <Marquee/> 

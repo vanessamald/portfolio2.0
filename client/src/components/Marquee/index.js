@@ -1,7 +1,11 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
+import {  motion, useInView } from 'framer-motion';
 
 const marqueeVariants = {
+  hidden: {
+    opacity: 0,
+    y: -10,
+  },
   animate: {
     x: [-1000, 1000],
     transition: {
@@ -27,11 +31,14 @@ const marqueeVariants = {
 };
 
 const Marquee = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
     return (
-    <div>
-        <div className="marquee" style={{marginBottom: '-3rem'}}>
+    <div ref={ref}>
+        <div className={`marquee ${isInView ? 'slideUp-text' : 'hidden-text'}`} style={{marginBottom: '-3rem'}}>
             <motion.div
-                className="marquee-flex"
+                className='marquee-flex'
                 variants={marqueeVariants}
                 animate="animate"
             >
@@ -47,7 +54,7 @@ const Marquee = () => {
         <div className="marquee-p-container">
             <a href='#skills' className="marquee-p">See A Breakdown of my Skills here</a>
         </div>
-        <div className="marquee" style={{marginTop: '-3rem'}}>
+        <div className="marquee" style={{marginTop: '-3rem'}} >
           <motion.div
               className="marquee-flex"
               variants={marqueeVariants}

@@ -72,6 +72,15 @@ code {
 }
 
 /* Animations */
+@keyframes border-circle-animation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes slideIn {
   from {
     transform: translateX(-100%);
@@ -81,9 +90,9 @@ code {
   }
 }
 
-@keyframes slideInLeft {
+@keyframes slideLeft {
   from {
-    transform: translateX(0);
+    transform: translateX(100vw);
   }
   to {
     transform: translateX(-100%);
@@ -154,9 +163,35 @@ code {
   height: 95vh;
 }
 
+.padding-left {
+  padding-left: 30%;
+}
+
 /* Text Styling */ 
+.slideUp-text {
+  transform: scaleX(20deg);
+ /* animation: textAnimation 2s forwards;
+  animation-delay: 1s;*/
+}
+
+.text-reveal {
+  animation: textReveal 2s forwards;
+}
+
+.text-opacity {
+  opacity: 0;
+}
+
+.slide-out {
+  animation: slideLeft 5s forwards;
+}
+
+.hidden-text {
+  display: none;
+}
+
 .small-text {
-  font-size: 12px;
+  font-size: 14px;
   font-family: Metropolitan;
 }
 
@@ -164,6 +199,14 @@ code {
   font-size: 30px;
   font-weight: 400;
   font-family: BlackDelights;
+}
+
+.large-text {
+  font-size: 6vw;
+  font-style: italic;
+  font-family: BlackDelights;
+  font-weight: 100;;
+  line-height: 1em;
 }
 
 .text-center {
@@ -200,6 +243,20 @@ code {
 /* Background Styling */ 
 .transparent {
   background-color: transparent;
+}
+
+.background-transition {
+  transition: transform 3s;
+}
+
+.background-slideup {
+  transform: translateY(0%);
+  background-color: var(--font-color);
+}
+
+.background-light {
+  background-color: var(--font-color);
+  color: var(--body-bg-color);
 }
 /* Background Styling Ends */
 
@@ -266,9 +323,6 @@ code {
   overflow-y: hidden;
   background-color: var(--font-color);
   color:var(--alt-bg-color);
-  font-size: 5vw;
-  font-family: BlackDelights;
-  font-weight: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -276,7 +330,7 @@ code {
 }
 
 .loader {
-  height: 1px;
+  height: 0.5px;
   width: 0;
   background-color: black;
   animation: draw-line 2s forwards;
@@ -285,6 +339,7 @@ code {
 .loading-text {
   background-color: var(--font-color);
   color: var(--body-bg-color);
+  font-size: 16px;
 }
 
 
@@ -335,10 +390,6 @@ code {
   font-weight: 100;
 }
 
-.home-intro-container {
-  padding-left: 6rem;
-  padding-right: 6rem;
-}
 
 .profile-pic {
   opacity: 0;
@@ -479,6 +530,15 @@ a span span {
 /* Nav Ends */
 
 /* About Styling */
+.border-circle-animation {
+  width: 200px;
+  height: 200px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: relative;
+  animation: border-circle-animation 3s infinite linear;
+}
+
 .line-div {
   animation: draw-line 2s forwards;
 }
@@ -493,8 +553,9 @@ a span span {
 }
 
 .about-me-text {
-  font-size: 6vw;
-  
+  margin-top: 0px;
+  font-size: 30px;
+  font-family: Metropolitan;
 }
 
 .about-me-text2 {
@@ -503,6 +564,7 @@ a span span {
 
 .about-em {
   font-family: BlackDelights;
+  font-size: 32px;
 }
 
 
@@ -547,7 +609,12 @@ a span span {
   left: 0;
   width: auto;
   height: 20rem;
-  
+  filter: grayscale(100%);
+}
+
+.work-image:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
 }
 
 .work-image-ani {
@@ -560,12 +627,8 @@ a span span {
 }
 
 .work-title {
-  
   color: var(--body-bg-color);
-  
-  font-size: 10vw;
-  font-style: italic;
-  font-family: BlackDelights;
+
   background-color: transparent;
   margin-right: 2rem;
 }
@@ -724,11 +787,10 @@ a span span {
   opacity: 0;
   animation-delay: 2s;
   transition: 3s;
-  animation: slideInLeft 5s forwards; 
+  animation: slideLeft 5s forwards; 
 }
 
 .slide-text {
-  font-size: 8vw;
   transform: translateX(-100vw);
 }
 
@@ -754,6 +816,7 @@ a span span {
 .contact-title {
   font-family: BlackDelights;
   font-size: 5vw;
+  font-weight: 300;
 }
 
 .contact-container {
