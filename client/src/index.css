@@ -949,6 +949,9 @@ a span span {
   .home-intro-container {
     padding: 3rem;
   }
+  .form-input {
+    height: 3rem;
+  }
  
   .work-title {
     margin-right: 0rem;
