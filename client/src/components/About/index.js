@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import Marquee from '../Marquee';
 import {  motion, useInView } from 'framer-motion';
+import Work from '../Work';
 
 function About() {
   const ref = useRef(null);
@@ -34,7 +35,7 @@ function About() {
     return (
         
         <div className='about-container' id='about'>
-          <div ref={ref}>
+          <div >
           <div  className={`container-large about-me-container text-center background-transition ${isScrolled ? 'background-slideup' : ''}`}>
               <p  className={`small-text text-center background-light ${isScrolled ? '' : 'text-opacity'}`}>Who I am</p>
               {aboutSentence.split(' ').map((word, index) => (
@@ -76,18 +77,18 @@ function About() {
             </div>
             // {`container-large background-transition ${isScrolled ? 'background-slideup' : ''}`}
                   */}
-                  <div ref={ref}>
+                  <div>
             {isScrolled ? 
             
- <div className='background-light' >
-            <p className='about-me-text padding-left background-light'> My friends and colleagues would describe me as <em className={`about-em background-light ${isInView ? 'text-reveal' : 'text-opacity'}`}>empathetic</em>, <em className={`about-em background-light ${isInView ? 'text-reveal' : 'text-opacity'}`}>driven</em>, and <em className={`background-light about-em ${isInView ? 'text-reveal' : 'text-opacity'}`}>creative</em>. 
-                I want to help users have an intuitive experience through <em className={`background-light about-em ${isInView ? 'text-reveal' : 'text-opacity'}`}>artistic</em> and <em className={`about-em background-light ${isInView ? 'text-reveal' : 'text-opacity'}`}>seamless</em> designs.</p>
+ <div className='background-light'>
+            <p className='about-me-text padding-left padding-bottom background-light'> My friends and colleagues would describe me as <em className={`about-em background-light ${isScrolled ? 'text-reveal' : 'text-opacity'}`}>empathetic</em>, <em className={`about-em background-light ${isScrolled ? 'text-reveal' : 'text-opacity'}`}>driven</em>, and <em className={`background-light about-em ${isScrolled ? 'text-reveal' : 'text-opacity'}`}>creative</em>. 
+                I want to help users have an intuitive experience through <em className={`background-light about-em ${isScrolled ? 'text-reveal' : 'text-opacity'}`}>artistic</em> and <em className={`about-em background-light ${isScrolled ? 'text-reveal' : 'text-opacity'}`}>seamless</em> designs.</p>
             </div>
            : ' '}  
            </div>
 
-            <div className='about-me-container flex-column flex-center' ref={ref}>
-              <p  className='small-text text-center'>What I do</p>
+            <div className='about-me-container flex-column flex-center'>
+              <p ref={ref} className='small-text text-center'>What I do</p>
              
               {aboutSentence2.split(' ').map((word, index) => (
                         <React.Fragment key={index}>
@@ -107,6 +108,8 @@ function About() {
               <div className='container-large'>
                 <Marquee/> 
               </div>
+
+              <Work/>
             <div className='skills-container'>
               <h2 id='skills'>Skills</h2>
                 <h3>Web Design & Development</h3>

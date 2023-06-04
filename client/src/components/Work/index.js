@@ -29,7 +29,7 @@ function Work() {
 
     return (
         <div className='work-container' id='work' ref={ref}>
-            <h2>Featured Works</h2>
+            <h2 className='small-text text-center'>Featured Works</h2>
             <div className='work-wrapper flex-row flex-center'>
                 <a className={isInView ? 'work-image-ani' : ''} href='https://www.evokediagnostics.com' target='_blank' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}><img className='work-image' src={evokeDesktop1}></img></a>
                 <div className='work-title flex-row flex-center'>

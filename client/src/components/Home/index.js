@@ -43,7 +43,7 @@ function Home() {
                
             </div>
             <About/>
-            <Work/>
+            
             <Contact/>
             <Footer/>
             

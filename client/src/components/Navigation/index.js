@@ -6,7 +6,7 @@ function Navigation () {
     const [ about, setAbout ] = useState('hidden-a');
     const [ menu, setMenu ] = useState('hidden-menu');
     const [ toggle, setToggle ] = useState(false);
-    const [ button, setButton ] = useState('close-container')
+    const [ button, setButton ] = useState('close-container');
 
     const handleStyles = () => {
         if (!toggle) {

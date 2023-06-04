@@ -10,11 +10,37 @@ const Contact = () => {
    const isScrolled = useScroll();
 
     // state for contact to view contact form 
-    const [ contactForm, setContactForm ] = useState('hidden-form')
+    const [ contactForm, setContactForm ] = useState('hidden-form');
+    const [ button, setButton ] = useState('close-container');
+    const [ body, setBody ] = useState('');
+    const [isFormOpen, setIsFormOpen] = useState(false);
+
+    const toggleForm = () => {
+      setIsFormOpen(!isFormOpen);
+    };
 
     const handleClick = () => { 
-        setContactForm('contact-form')
+        setContactForm('contact-form');
+        toggleForm();
+    };
+
+    const handleClose = () => {
+        setContactForm('hidden-menu');
+        toggleForm();
     }
+
+    // disable scrolling in the background when form is open
+    useEffect(() => {
+        if (isFormOpen) {
+          document.body.style.overflow = 'hidden'; 
+        } else {
+          document.body.style.overflow = ''; 
+        }
+    
+        return () => {
+          document.body.style.overflow = ''; 
+        };
+      }, [isFormOpen]);
 
     // contact form status
     const [ status, setStatus ] = useState('Submit');
@@ -31,7 +57,7 @@ const Contact = () => {
     // handle sumbit form 
     const submitForm = async (e) => {
         e.preventDefault();
-        //setStatus('Sending email');
+        setStatus('Sending email');
         e.target.reset();
         
         let emailMessage = {
@@ -56,26 +82,43 @@ const Contact = () => {
             if (response) {
                 setResult({
                     success: true, 
-                    message: 'Message was sent, we will get back to you shortly.'
+                    message: 'Message was sent!'
             })
             } else {
                 setResult({
                     success: false, 
                     message: 'Something went wrong, please try again later.'
                 })
-              }}
+              }
             }; 
+            setTimeout(() => {
+                setResult({
+                  success: null,
+                  message: '',
+                });
+              }, 3000);   
+            };
 
     return (
         <div className='contact-container' ref={ref}>
-            <h3 className='contact-title'>Let's Connect!</h3>
-            <div className='social-link-container' id='contact'>
+            <h3 id='contact' className='contact-title'>Let's Connect!</h3>
+            <div className='social-link-container'>
                     <a className={isInView ? 'text-animation social-links transparent' : ''}  href='https://www.linkedin.com/in/vanessa-maldonado-807344191/' target='_blank'>LinkedIn</a>
                     <a className={isInView ? 'text-animation social-links transparent' : ''}  style={{animationDelay: '3s'}} href='https://github.com/vanessamald' target='_blank'>Github</a>
                     <a className={isInView ? 'text-animation social-links transparent' : ''}  onClick={handleClick} style={{animationDelay: '4s'}} >Email</a>
             </div>
+
+
             <div className={contactForm}>
-                <div className='contact-form-content'>
+                <div className='flex flex-end'>
+                    <button className='close-btn small-top-margin' onClick={handleClose}>
+                        <div>
+                            <div className='contact-close-line1'></div>
+                            <div className='contact-close-line2'></div>
+                        </div>
+                    </button>
+                </div>
+                <div className='contact-form-content flex flex-center'>
                 <Form onSubmit={submitForm} className='form-content'>
                 <Form.Group className="form-group" controlId="name">
                     <Form.Label className='form-name'></Form.Label>
@@ -126,11 +169,18 @@ const Contact = () => {
                     type="submit" 
                     variant="primary"
                 >
-                {status}
+                    Send
                 </button>
+                <div>
+                    {result && (
+                        <p className={`${result.success ? 'success' : 'error'}`}>
+                        {result.message}
+                        </p>
+                    )}
+                </div>
                 </div> 
             </Form>
-                </div>
+        </div>
             </div>
         </div>
     )
