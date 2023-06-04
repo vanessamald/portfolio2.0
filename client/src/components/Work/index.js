@@ -38,7 +38,7 @@ function Work() {
                         <p className={`numbers large-text transparent ${isInView ? 'text-animation' : ''} `}>1</p>
                     </div>
                     <div className={isInView ? 'scroll-down' : 'scroll-up'} style={{backgroundColor: 'transparent'}}>
-                        <h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Evoke</h3>    
+                        <a className='no-underline' href='https://www.evokediagnostics.com' target='_blank'><h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Evoke</h3> </a>   
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@ function Work() {
                         <p className={`numbers large-text transparent ${isInView ? 'text-animation' : ''} `}>2</p>
                     </div>
                     <div className={isInView ? 'scroll-down' : 'scroll-up'} style={{backgroundColor: 'transparent', animationDelay:'2s'}}>
-                       <h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Revivir Studio</h3>
+                       <a className='no-underline' href='https://www.revivirstudio.com/' target='_blank'><h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Revivir Studio</h3></a>
                     </div> 
                 </div>
                 <a className={isInView ? 'work-image-ani' : ''} href='https://www.revivirstudio.com/' target='_blank' onMouseOver={handleMouseOver2} onMouseOut={handleMouseOut2}><img className='work-image' src={revivirDesktop}></img></a>
@@ -87,7 +87,7 @@ function Work() {
                         <p className={`numbers large-text transparent ${isInView ? 'text-animation' : ''} `}>3</p>
                     </div>
                     <div className={isInView? 'scroll-down' : 'scroll-up'} style={{backgroundColor: 'transparent', animationDelay: '3s'}}>
-                        <h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Friends Trivia</h3>
+                        <a className='no-underline' href='https://vanessamald.github.io/API-timed-quiz/' target='_blank'><h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Friends Trivia</h3></a>
                     </div> 
                 </div>
             </div>
