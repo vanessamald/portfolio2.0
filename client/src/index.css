@@ -528,6 +528,11 @@ a span span {
   font-family: Metropolitan;
 }
 
+.social-links:hover {
+  text-decoration: underline;
+  
+}
+
 a span span {
   position: relative;
   opacity: 0;
