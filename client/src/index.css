@@ -447,6 +447,7 @@ a span span {
 
 .change .close-line1 {
   transform: translateY(12px) rotate(45deg);
+  background-color: #edece7;
 }
 
 .change .close-line2 { 
@@ -455,6 +456,7 @@ a span span {
   width: 30px;
   transition: .4s;
   transform: translateY(1px) rotate(-45deg);
+  background-color: #edece7;
 }
 
 .close-line1, .close-line2 {
@@ -919,7 +921,7 @@ a span span {
   * {
     cursor: auto;
   }
-  .cursor {
+  .cursor-dark, .cursor-light .large-cursor-dark, .large-cursor-light {
     display: none;
   }
   .theme-button {
@@ -974,6 +976,9 @@ a span span {
   .cursor {
     display: none;
   }
+  .cursor-dark, .cursor-light .large-cursor-dark, .large-cursor-light {
+    display: none;
+  }
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
@@ -982,6 +987,9 @@ a span span {
     cursor: auto;
   }
   .cursor {
+    display: none;
+  }
+  .cursor-dark, .cursor-light .large-cursor-dark, .large-cursor-light {
     display: none;
   }
   .work-image {
@@ -994,6 +1002,9 @@ a span span {
   /* For landscape layouts only */
   * {
     cursor: auto;
+  }
+  .cursor-dark, .cursor-light .large-cursor-dark, .large-cursor-light {
+    display: none;
   }
   .cursor {
     display: none;
