@@ -4,7 +4,7 @@ import useThemeStorage from '../useThemeStorage';
 
 function Cursor() {
   const [ cursor, setCursor, theme, componentMounted, isOn ] = useThemeStorage();
- // console.log('Cursor:', cursor);
+  console.log('Cursor:', cursor);
   console.log(cursor);
   //console.log(theme);
   const [linkHover, setLinkHover] = useState(false);
@@ -91,7 +91,7 @@ function Cursor() {
         });
       };
     }, []);
-/*
+
     const addLinkEvents = () => {
       document.querySelectorAll('a').forEach((el) => {
         el.addEventListener('mouseenter', () => setLinkHover(true));
@@ -123,7 +123,7 @@ function Cursor() {
         removeLinkEvents();
       };
     }, []);
-  */
+  
     // linkHover ? 'cursor-hover' : cursor 
     // {`cursor-${theme === 'dark' ? 'light' : 'dark'}${linkHover ? '-hover' : ''}`} 
 

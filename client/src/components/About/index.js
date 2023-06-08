@@ -7,7 +7,7 @@ function About() {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
-  const aboutSentence = 'Hi! I am Vanessa Maldonado, a Freelance Web Developer.';
+  const aboutSentence = 'Hi! I am Vanessa Maldonado, a Mexican-American Web Developer.';
   const aboutSentence2 = 'I make websites come to life.';
 
     const [isScrolled, setIsScrolled] = useState(false);
@@ -115,32 +115,33 @@ function About() {
                 <h3>Web Design & Development</h3>
                 <h4>Languages + Frameworks</h4>
                 <div className='skills-content'>
-                  <p>HTML</p>
-                  <p>CSS</p>
-                  <p>JavaScript</p>
-                  <p>jQuery</p>
-                  <p>React</p>
-                  <p>Bootstrap</p>
-                  <p>Framer Motion</p>
+                  <p className='bold'>HTML</p>
+                  <p className='bold'>CSS</p>
+                  <p className='bold'>JavaScript</p>
+                  <p className='bold'>jQuery</p>
+                  <p className='bold'>React</p>
+                  <p className='bold'>Bootstrap</p>
+                  <p className='lightweight'>Framer Motion</p>
                 </div>
                 
                 <div className='line-div'></div>
                 <h4>Backend Technologies + Databases</h4>
                 <p>Node.js</p>
                 <p>NPM</p>
-                <p>Express</p>
-                <p>MongoDB</p>
-                <p>MySQL</p>
-                <p>SQL</p>
-                <p>GraphQl</p>
+                <p className='bold'>Express</p>
+                <p className='lightweight'>MongoDB</p>
+                <p className='bold'>MySQL</p>
+                <p className='lightweight'>SQL</p>
+                <p className='lightweight'>GraphQl</p>
                 <div className='line-div'></div>
                 <h4>Development Tools</h4>
                 <p>Git</p>
                 <p>Heroku</p>
                 <p>Visual Studio Code</p>
                 <p>GoDaddy</p>
-                <h4>Testing</h4>
+                <h4>Testing & Debugging</h4>
                 <p>Jest</p>
+                <p>Chrome Dev Tools</p>
                 <div className='line-div'></div>
                 <h3>Social Media & Marketing</h3>
                 <p> SEO / Social Media Management & Development  / Content Creation / Copywriting / Branding / Infographics </p>
@@ -151,7 +152,7 @@ function About() {
                 <div className='line-div'></div>
                 <p>University of Texas Full Stack Web Developer Certificate - 2022</p>
                 <div className='line-div'></div>
-                <p>University of Texas Bachelor's Degree in Public Health - 2020</p>
+                <p>University of Texas Bachelor of Science - 2020</p>
             </div>
           </div> 
         </div>

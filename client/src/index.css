@@ -51,7 +51,6 @@ code {
 .theme-button {
   position: absolute;
   top: 0;
-  margin-left: 2rem;
   font-size: 2rem;
   font-weight: 100;
   margin-top: 10px;
@@ -222,6 +221,14 @@ code {
 
 .no-underline {
   text-decoration: none;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.lightweight {
+  font-weight: 300;
 }
 
 /* Flex Styling */
@@ -435,7 +442,7 @@ a span span {
 
 .close-btn {
   border: none;
-  margin-right: 1rem;
+  margin-right: 10px;
   z-index: 99999;
   position: relative;
   background-color: transparent;
