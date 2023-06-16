@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import useThemeStorage from '../useThemeStorage';
 
-function Cursor() {
-  const [ cursor, setCursor, theme, componentMounted, isOn ] = useThemeStorage();
-  console.log('Cursor:', cursor);
-  console.log(cursor);
-  //console.log(theme);
+function Cursor({cursor}) {
+  // hover state
   const [linkHover, setLinkHover] = useState(false);
 
+  // framer motion cursor motion values
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
@@ -16,12 +14,11 @@ function Cursor() {
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
-  
+  // event listener for custom cursor to follow mouse
     useEffect(() => {
       const moveCursor = (e) => {
         cursorX.set(e.clientX - 5);
         cursorY.set(e.clientY - 5);
-
     };
     window.addEventListener("mousemove", moveCursor);
     window.addEventListener("mouseenter", moveCursor);
@@ -31,12 +28,8 @@ function Cursor() {
       window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("mousedown", moveCursor);
       window.removeEventListener("mouseout", moveCursor);
-      //document.removeEventListener('mouseenter', () => setLinkHover);
-      //document.removeEventListener('mouseleave', () => setLinkHover);
-
     };
-  
-    }, [isOn]);
+  }, []);
   
     const variants = {
       default: {
@@ -60,6 +53,8 @@ function Cursor() {
         pointerEvents: 'none'
       }
     } 
+    
+    // event listener for hover & button clicks
     useEffect(() => {
       const handleLinkHover = () => {
         setLinkHover(true);
@@ -92,47 +87,11 @@ function Cursor() {
       };
     }, []);
 
-    const addLinkEvents = () => {
-      document.querySelectorAll('a').forEach((el) => {
-        el.addEventListener('mouseenter', () => setLinkHover(true));
-        el.addEventListener('mouseleave', () => setLinkHover(false));
-      });
-      document.querySelectorAll('button').forEach((el) => {
-        el.addEventListener('mouseover', () => setLinkHover(true));
-        el.addEventListener('mouseout', () => setLinkHover(false));
-      });
-    }
-    
-    const removeLinkEvents = () => {
-      document.querySelectorAll('a').forEach((el) => {
-        el.removeEventListener('mouseenter', () => setLinkHover(false));
-        el.removeEventListener('mouseleave', () => setLinkHover(true));
-      });
-      document.querySelectorAll('button').forEach((el) => {
-        el.removeEventListener('mouseover', () => setLinkHover(false));
-        el.removeEventListener('mouseout', () => setLinkHover(true));
-      });
-    };
-
-    addLinkEvents();
-    
-    useEffect(() => {
-      addLinkEvents();
-  
-      return () => {
-        removeLinkEvents();
-      };
-    }, []);
-  
-    // linkHover ? 'cursor-hover' : cursor 
-    // {`cursor-${theme === 'dark' ? 'light' : 'dark'}${linkHover ? '-hover' : ''}`} 
-
     return (
-      <div className={cursor}>
-        <motion.div className= {`cursor-${cursor === 'dark' ? 'light' : 'dark'}${linkHover ? '-hover' : ''}`}  variants={variants} style={{translateX: cursorXSpring, translateY: cursorYSpring}}
+      <div>
+        <motion.div className= {`cursor-${cursor === 'dark' ? 'light' : 'dark'}${linkHover ? '-hover' : ''}`} variants={variants} style={{translateX: cursorXSpring, translateY: cursorYSpring}}
         ><div className={cursor === 'dark' ? 'large-cursor-light' : 'large-cursor-dark'}></div> </motion.div> 
-      </div>
-        
+      </div>  
     )
 }
 
