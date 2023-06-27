@@ -55,6 +55,7 @@ function Cursor({cursor}) {
     } 
     
     // event listener for hover & button clicks
+    /*
     useEffect(() => {
       const handleLinkHover = () => {
         setLinkHover(true);
@@ -81,6 +82,41 @@ function Cursor({cursor}) {
         });
     
         document.querySelectorAll('button').forEach((el) => {
+          el.removeEventListener('mouseenter', handleLinkHover);
+          el.removeEventListener('mouseleave', handleLinkLeave);
+        });
+      };
+    }, []);
+    */
+    useEffect(() => {
+      const handleLinkHover = () => {
+        setLinkHover(true);
+      };
+  
+      const handleLinkLeave = () => {
+        setLinkHover(false);
+      };
+  
+      const links = document.querySelectorAll('a');
+      const buttons = document.querySelectorAll('button');
+  
+      links.forEach((el) => {
+        el.addEventListener('mouseenter', handleLinkHover);
+        el.addEventListener('mouseleave', handleLinkLeave);
+      });
+  
+      buttons.forEach((el) => {
+        el.addEventListener('mouseenter', handleLinkHover);
+        el.addEventListener('mouseleave', handleLinkLeave);
+      });
+  
+      return () => {
+        links.forEach((el) => {
+          el.removeEventListener('mouseenter', handleLinkHover);
+          el.removeEventListener('mouseleave', handleLinkLeave);
+        });
+  
+        buttons.forEach((el) => {
           el.removeEventListener('mouseenter', handleLinkHover);
           el.removeEventListener('mouseleave', handleLinkLeave);
         });
