@@ -103,7 +103,7 @@ const Contact = () => {
         <div className='contact-container' ref={ref}>
             <h3 className='small-text text-center'>Let's Connect!</h3>
             <div className='social-link-container'>
-                    <a className={isInView ? 'text-animation social-links text-center transparent' : ''}  href='https://www.linkedin.com/in/vanessa-maldonado-807344191/' target='_blank'>LinkedIn</a>
+                    <a className={isInView ? 'text-animation social-links text-center transparent' : ''}  href='https://www.linkedin.com/in/vanessa-m-807344191/' target='_blank'>LinkedIn</a>
                     <a className={isInView ? 'text-animation text-center social-links transparent' : ''}  style={{animationDelay: '3s'}} href='https://github.com/vanessamald' target='_blank'>Github</a>
                     <a className={isInView ? 'text-animation text-center social-links transparent' : ''}  onClick={handleClick} style={{animationDelay: '4s'}} >Email</a>
             </div>
