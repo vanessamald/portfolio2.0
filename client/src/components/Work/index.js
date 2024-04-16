@@ -3,7 +3,7 @@ import evokeDesktop1 from '../../assets/images/evoke-desktop1.png';
 import friendsDesktop1 from '../../assets/images/friends-desktop.png';
 import revivirDesktop from '../../assets/images/revivir.png';
 import {  motion, useInView } from 'framer-motion';
-import makebetterchoices from '../../assets/images/makebetterchoices-mobile.png'
+import makebetterchoices from '../../assets/images/MakeBetterChoices-mobile.png'
 
 function Work() {
     const ref = useRef(null);
