@@ -3,6 +3,7 @@ import evokeDesktop1 from '../../assets/images/evoke-desktop1.png';
 import friendsDesktop1 from '../../assets/images/friends-desktop.png';
 import revivirDesktop from '../../assets/images/revivir.png';
 import {  motion, useInView } from 'framer-motion';
+import makebetterchoices from '../../assets/images/makebetterchoices-mobile.png'
 
 function Work() {
     const ref = useRef(null);
@@ -88,6 +89,20 @@ function Work() {
                     </div>
                     <div className={isInView? 'scroll-down' : 'scroll-up'} style={{backgroundColor: 'transparent', animationDelay: '3s'}}>
                         <a className='no-underline' href='https://vanessamald.github.io/API-timed-quiz/' target='_blank'><h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Friends Trivia</h3></a>
+                    </div> 
+                </div>
+            </div>
+            <div className='line-div'></div>
+            <br/>
+            <div className='work-wrapper flex-row flex-center'>
+                <a className={isInView ? 'work-image-ani' : ''} href='' target='_blank' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}><img className='work-image' src={makebetterchoices}></img></a>
+                <div className='work-title flex-row flex-center' ref={ref}>
+                    <div className='flex-row'>
+                        <p className='numbers large-text'>0</p>
+                        <p className={`numbers large-text transparent ${isInView ? 'text-animation' : ''} `}>4</p>
+                    </div>
+                    <div className={isInView? 'scroll-down' : 'scroll-up'} style={{backgroundColor: 'transparent', animationDelay: '3s'}}>
+                        <a className='no-underline' href='' target='_blank'><h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Make Better Choices(Coming Soon!)</h3></a>
                     </div> 
                 </div>
             </div>

@@ -7,7 +7,7 @@ function About() {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
-  const aboutSentence = 'Hi! I am Vanessa Maldonado, a Mexican-American Web Developer.';
+  const aboutSentence = 'Hi! I am Vanessa Maldonado, a Web Developer & Social Media Strategist with a background in Healthcare.';
   const aboutSentence2 = 'I make websites come to life.';
 
     const [isScrolled, setIsScrolled] = useState(false);
