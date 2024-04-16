@@ -31,14 +31,14 @@ function Work() {
         <div className='work-container' id='work' ref={ref}>
             <h2 className='small-text text-center'>Featured Works</h2>
             <div className='work-wrapper flex-row flex-center'>
-                <a className={isInView ? 'work-image-ani' : ''} href='https://www.evokediagnostics.com' target='_blank' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}><img className='work-image' src={evokeDesktop1}></img></a>
+                <a className={isInView ? 'work-image-ani' : ''} href='https://secret-spire-97065.herokuapp.com/' target='_blank' onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}><img className='work-image' src={evokeDesktop1}></img></a>
                 <div className='work-title flex-row flex-center'>
                     <div className='flex-row'>
                         <p className='numbers large-text'>0</p>
                         <p className={`numbers large-text transparent ${isInView ? 'text-animation' : ''} `}>1</p>
                     </div>
                     <div className={isInView ? 'scroll-down' : 'scroll-up'} style={{backgroundColor: 'transparent'}}>
-                        <a className='no-underline' href='https://www.evokediagnostics.com' target='_blank'><h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Evoke</h3> </a>   
+                        <a className='no-underline' href='https://secret-spire-97065.herokuapp.com/' target='_blank'><h3 className='slide-text large-text' style={{animationDelay: '2s', backgroundColor: 'transparent'}}>Evoke</h3> </a>   
                     </div>
                 </div>
             </div>
